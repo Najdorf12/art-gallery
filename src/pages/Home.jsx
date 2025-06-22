@@ -61,43 +61,44 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="relative w-full h-[100dvh] lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
+    <main className="relative w-full h-screen bg-blackCustom lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
       <TsParticlesBg />
-      <div className="w-full h-[100dvh] lg:h-screen z-[550] relative flex flex-col justify-evenly gap-2 items-center pt-7">
-        <Navbar />
+      <Navbar />
+
+      <section className="w-full h-full relative flex flex-col  items-center lg:mt-20">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-b bg-clip-text text-transparent from-grayCustom via-grayCustom to-zinc-300 text-[5.6rem] px-2 text-center lg:text-[16rem] xl:text-[18.2rem] 2xl:text-[22rem]"
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.6rem] px-2 text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem]"
           >
             GALERÍA INVISIBLE
           </h1>
-          <div className="text-stone-500 font-text2 mt-1 flex justify-center items-center gap-4 text-sm lg:mt-3 lg:text-xl 2xl:text-2xl">
+          <div className="text-grayCustom font-text3 mt-3 flex justify-center items-center gap-4 text-sm  lg:text-xl 2xl:text-2xl">
             <span
               ref={lineRef}
-              className="w-20 h-[1px] bg-stone-600 lg:w-[400px] xl:w-[500px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
             EXPOSICIÓN COLECTIVA{" "}
             <span
               ref={lineRef2}
-              className="w-20 h-[1px] bg-stone-600 lg:w-[400px] xl:w-[500px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-2 mt-2 lg:text-base lg:text-balance xl:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-2 mt-2 lg:text-base lg:text-balance xl:mt-3 xl:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl"
           >
             Galería Invisible nace como el catálogo de la exposición colectiva
-            “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a seis
-            artistas contemporáneos de Valparaíso. Este grupo de artistas,
-            utilizan la gráfica y el soporte bidimensional, como herramienta
+            “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a
+            artistas contemporáneos de Valparaíso. Este grupo de artistas
+            utilizan la gráfica y el soporte bidimensional como herramienta
             discursiva para desarrollar una investigación estética, poética y
             narrativa que representa su imaginario visual
             porteño-latinoamericanista.
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full lg:gap-x-6 xl:gap-x-9 2xl:gap-x-14">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full lg:mt-9 lg:gap-x-12 xl:gap-x-24 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div
               key={i}
@@ -108,7 +109,7 @@ const Home = () => {
             </div>
           ))}
         </section>
-      </div>
+      </section>
     </main>
   );
 };

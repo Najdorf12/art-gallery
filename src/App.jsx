@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/Contacto" element={<Contact />} />
           <Route path="/SobreNosotros" element={<About />} />
           <Route
-            path="/artist/:id"
+            path="/Artista/:id"
             element={<ArtistDetail artistsData={artistsData} />}
           />
         </Routes>

@@ -20,7 +20,7 @@ const Navbar = () => {
           </li>
         </Link>
         <Link to={"/contacto"}>
-          <li className="text-whiteCustom duration-700 cursor-pointer hover:scale-110">
+          <li className="text-orangeCustom duration-700 cursor-pointer hover:scale-110">
             Contacto
           </li>
         </Link>
