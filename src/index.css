@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: "august";
+    font-style: normal;
+    src: url(/font/August-Bold.ttf) format("woff2");
+  }
+  @font-face {
+    font-family: "minimal";
+    font-style: normal;
+    src: url(/font/minimal.ttf) format("woff2");
+  }
+}
+
+@theme {
+  --font-title: "august", sans-serif;
+  --font-text: "Inter", sans-serif;
+  --font-text2: "Raleway", serif;
+  --font-text3: "Montserrat", serif;
+
+  --breakpoint-sm: 430px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1350px;
+  --breakpoint-2xl: 1650px;
+  --breakpoint-3xl: 1920px;
+  
+  --color-orangeCustom: #ff7846; /* #EE7828 */
+  --color-whiteCustom: #f7f4f0; /* //#E6E6E6 */
+  --color-blackCustom: #2d2d2d; /* #2C2C2C */
+  --color-grayCustom: #736e69; /* #C5BAAA */
+  --color-stoneCustom: #806d61;
+}
+/* ---- tsparticles container ---- */
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#tsparticles2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
