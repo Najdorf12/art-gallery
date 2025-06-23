@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import CardsHome from "../components/CardsHome";
 import TsParticlesBg from "../components/TsParticlesBg";
 import { artistsData } from "../data/artistsData";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
   const descriptionRef = useRef(null);
   const cardsRef = useRef([]); // <-- Array de referencias para las cards
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timeline = gsap.timeline({
       defaults: { duration: 1, ease: "power1.out" },
     });
