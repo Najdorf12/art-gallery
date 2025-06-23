@@ -170,8 +170,8 @@ export const artistsData = [
   },
   {  id: "Lorem Ipsum",
     icon: icon4,
-    firstname: "Laura",
-    lastname: "Aguirre",
+    firstname: "Lorem",
+    lastname: "Ipsum",
     fullName: "Laura Aguirre Naretto",
     contentHome: "Lorem ipsum dolor sit",
     description: `Laura Verónica Aguirre Naretto Licenciada en Artes – Diplomado en

@@ -25,8 +25,8 @@ const About = ({ handleButtonClick }) => {
     <section className="flex flex-col bg-blackCustom h-screen overflow-hidden relative w-full justify-evenly pt-3 lg:flex-row lg:items-center lg:pl-[5%]">
       <Navbar />
       <TsParticlesBg />
-      <article className="flex flex-col justify-start items-start relative z-50 w-full cursor-default lg:max-w-[60%] lg:self-start lg:mt-28">
-        <h1 className="font-title leading-none text-orangeCustom text-8xl lg:text-[8rem] xl:text-[10rem] 2xl:text-[12rem]">
+      <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-28">
+        <h1 className="font-title leading-none text-orangeCustom text-7xl lg:text-[8rem] xl:text-[10rem] 2xl:text-[12rem]">
           <span className="text-whiteCustom">N</span>OSOTROS
         </h1>
         <div className="w-12 h-[1px] bg-orangeCustom mt-3  lg:w-[390px] lg:mt-6"></div>
@@ -51,7 +51,7 @@ const About = ({ handleButtonClick }) => {
           <Link to={`/Artista /${artist?.id}`}>
             <li
               key={i}
-              className="flex border-b border-orangeCustom py-2 max-w-[500px] lg:max-w-[700px]"
+              className="flex border-b border-orangeCustom pl-3 py-2 max-w-[500px] lg:max-w-[700px]"
             >
               <p className="font-title text-whiteCustom text-5xl w-[70%] lg:text-6xl xl:text-8xl 2xl:text-8xl">
                 {artist?.name.toLocaleUpperCase()}

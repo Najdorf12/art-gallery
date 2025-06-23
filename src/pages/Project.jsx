@@ -72,7 +72,7 @@ const Project = () => {
               </h1>
               <p
                 ref={subtitle2Ref}
-                className="text-sm font-text2 mt-3 text-grayCustom lg:mt-6 lg:text-lg"
+                className="text-sm font-text2 mt-4 text-grayCustom lg:mt-6 lg:text-lg"
               >
                 Arte Gráfico / Pintura / Cultura / Poética Urbana
               </p>
@@ -95,13 +95,13 @@ const Project = () => {
               >
                 <Link to={"/Proyecto"}>
                   <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
-                    PROYECTO
+                    PLANO
                     <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
                   </button>
                 </Link>
-                <Link to={"/Proyecto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
-                    PROYECTO
+                <Link to={"/Contacto"}>
+                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
+                    CONTACTO
                     <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
                   </button>
                 </Link>
