@@ -61,7 +61,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="relative w-full h-screen bg-blackCustom lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
+    <main className="relative w-full h-[100dvh] md:h-screen bg-blackCustom lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
       <TsParticlesBg />
       <Navbar />
 
@@ -102,7 +102,7 @@ const Home = () => {
           {artistsData?.map((artist, i) => (
             <div
               key={i}
-              ref={(el) => (cardsRef.current[i] = el)} // Asigna la referencia
+              ref={(el) => (cardsRef.current[i] = el)} 
               id="card"
             >
               <CardsHome artist={artist} />

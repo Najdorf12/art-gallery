@@ -4,7 +4,7 @@ import arrow from "/arrow.png";
 
 const CardsHome = ({ artist }) => {
   return (
-    <Link to={`/artist/${artist?.id}`}>
+    <Link to={`/Artista/${artist?.id}`}>
       <div className="relative z-50 border-l-[2px] border-b-[2px] border-stone-600 w-[180px] rounded-sm h-[120px] pl-3 pt-2 lg:pl-3 lg:w-[220px] lg:h-[133px] xl:w-[280px] xl:h-[154px]  2xl:w-[280px] 2xl:h-[178px] hover:border-stone-300 duration-700 cursor-pointer group">
         <figure>
           <img

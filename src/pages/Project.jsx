@@ -56,7 +56,7 @@ const Project = () => {
   };
 
   return (
-    <section className="relative w-full bg-blackCustom h-screen z-40 flex flex-col justify-start overflow-hidden">
+    <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-40 flex flex-col justify-start overflow-hidden">
       <TsParticlesBg />
       <Navbar />
       <div className="w-full z-[550] relative flex flex-col px-3 lg:pl-[5%] h-full">
