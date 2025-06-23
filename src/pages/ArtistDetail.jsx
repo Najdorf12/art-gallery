@@ -14,6 +14,7 @@ const ArtistDetail = ({ artistsData }) => {
   const cardsRef = useRef([]);
   const lenisRef = useRef();
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imageSelected, setSelectedImage] = useState(null);
 
   const artistImages = artist.obras.map((obra) => obra.image);
 
@@ -96,6 +97,26 @@ const ArtistDetail = ({ artistsData }) => {
     return () => ctx.revert();
   }, [imagesLoaded]);
 
+  if (imageSelected !== null)
+    return (
+      <div className="w-full h-screen bg-blackCustom">
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="w-12 h-12 absolute top-3 right-3 bg-orangeCustom z-50 text-xl text-whiteCustom"
+        >
+          X
+        </button>
+        <figure className="z-10 w-full h-screen xl:h-auto">
+          <img
+            src={imageSelected}
+            alt="img-artist"
+            className="card-cover w-full h-full min-h-full object-cover object-center absolute top-0 left-0"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    );
+
   return (
     <>
       <ReactLenis root ref={lenisRef} autoRaf={false} />
@@ -156,7 +177,8 @@ const ArtistDetail = ({ artistsData }) => {
             <div
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="relative w-full h-[80vh] rounded-xl overflow-hidden" // Altura fija en vh
+              className="relative w-full h-[80vh] rounded-xl overflow-hidden"
+              onClick={() => setSelectedImage(img)} // Altura fija en vh
             >
               <figure className="absolute inset-0 overflow-hidden z-10">
                 <img
@@ -166,11 +188,14 @@ const ArtistDetail = ({ artistsData }) => {
                   loading="lazy"
                 />
               </figure>
+              {/* <div className="absolute w-12 -rotate-45 bottom-1 right-2 z-[600]">
+                <img src={arrow} alt="" />
+              </div> */}
             </div>
           ))}
         </section>
 
-        <footer className="h-[50dvh] w-full bg-grayCustom flex items-center justify-center">
+        <footer className="h-[50dvh] w-full bg-blackCustom flex items-center justify-center">
           <p></p>
           <p></p>
         </footer>
