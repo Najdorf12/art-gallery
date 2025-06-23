@@ -8,16 +8,19 @@ import gsap from "gsap";
 
 const artistsBtns = [
   {
+    id : "LauraAguirre",
     name: "Laura Aguirre",
     data1: "Lorem impsum",
     data2: "Lorem impsum",
   },
   {
+    id: "EduHinojosa",
     name: "Edu Hinojosa",
     data1: "Lorem impsum",
     data2: "Lorem impsum",
   },
   {
+    id: "LoremIpsum",
     name: "Lorem Ipsum",
     data1: "Lorem impsum",
     data2: "Lorem impsum",
@@ -87,7 +90,7 @@ const About = ({ handleButtonClick }) => {
       </article>
       <ul className="flex flex-col gap-1 relative z-50 w-full mt-1 lg:self-end lg:pb-3">
         {artistsBtns?.map((artist, i) => (
-          <Link to={`/Artista /${artist?.id}`}>
+          <Link to={`/Artista/${artist?.id}`}>
             <li
               key={i}
               ref={(el) => (artistRef.current[i] = el)}
