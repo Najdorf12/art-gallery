@@ -65,11 +65,11 @@ const Home = () => {
       <TsParticlesBg />
       <Navbar />
 
-      <section className="w-full h-full relative flex flex-col  items-center mt-24 lg:mt-20">
+      <section className="w-full h-full relative flex flex-col  items-center mt-20 lg:mt-20">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.6rem] px-2 text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem]"
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.8rem] text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem]"
           >
             GALERÍA INVISIBLE
           </h1>
@@ -86,7 +86,7 @@ const Home = () => {
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-2 mt-3 lg:text-base lg:text-balance xl:mt-3 xl:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 mt-3 lg:text-base lg:text-balance xl:mt-3 xl:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl"
           >
             Galería Invisible nace como el catálogo de la exposición colectiva
             “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a

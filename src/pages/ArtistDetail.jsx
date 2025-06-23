@@ -99,7 +99,7 @@ const ArtistDetail = ({ artistsData }) => {
 
   if (imageSelected !== null)
     return (
-      <div className="w-full h-screen bg-blackCustom">
+      <div className="w-full h-[100dvh] md:h-screen bg-blackCustom">
         <button
           onClick={() => setSelectedImage(null)}
           className="w-12 h-12 absolute top-3 right-3 bg-orangeCustom z-50 text-xl text-whiteCustom"
@@ -123,8 +123,8 @@ const ArtistDetail = ({ artistsData }) => {
       <section className="bg-whiteCustom min-h-screen w-full font-text2">
         <Navbar />
 
-        <section className="w-full h-[100dvh] md:h-screen flex flex-col md:flex-row">
-          <div className="w-full h-[60dvh] pl-[5%] md:h-[90dvh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
+        <section className="w-full h-screen flex flex-col md:flex-row">
+          <div className="w-full h-[60dvh] pt-2 pl-[5%] md:h-[90dvh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
             <article>
               <h6 className="font-title text-8xl md:text-8xl lg:text-[12rem] lg:leading-[12rem] text-stone-300">
                 {artist.firstname + " "}{" "}
