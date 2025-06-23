@@ -25,7 +25,7 @@ const About = ({ handleButtonClick }) => {
     <section className="flex flex-col bg-blackCustom h-[100dvh] md:h-screen overflow-hidden relative w-full justify-evenly pt-3 lg:flex-row lg:items-center lg:pl-[5%]">
       <Navbar />
       <TsParticlesBg />
-      <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-28">
+      <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-20">
         <h1 className="font-title leading-none text-orangeCustom text-7xl lg:text-[8rem] xl:text-[10rem] 2xl:text-[12rem]">
           <span className="text-whiteCustom">N</span>OSOTROS
         </h1>
