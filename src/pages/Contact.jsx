@@ -18,7 +18,7 @@ const Contact = () => {
 
   useLayoutEffect(() => {
     const timeline = gsap.timeline({
-      defaults: { duration:  .8, ease: "power1.out" },
+      defaults: { duration: 0.7, ease: "power1.out" },
     });
 
     timeline
@@ -28,7 +28,7 @@ const Contact = () => {
         textRef.current,
         { x: -40, opacity: 0 },
         { x: 0, opacity: 1 },
-        "<" // Comienza al mismo tiempo que la animación anterior
+        "<"
       )
       .fromTo(
         formRef.current,
@@ -99,6 +99,7 @@ const Contact = () => {
             className="w-full relative rounded-md  overflow-hidden flex flex-col px-5 max-w-[500px]"
           >
             <form
+              ref={formRef}
               onSubmit={handleSubmit(onSubmit)}
               method="POST"
               action="#"
@@ -147,7 +148,7 @@ const Contact = () => {
             </form>
           </div>
           <div
-            ref={formRef}
+            ref={subtitleRef}
             id="text-reveal2"
             className="relative z-50 text-grayCustom font-text text-center text-balance mt-5 text-sm px-4 lg:text-base lg:mt-7 2xl:text-lg"
           >
