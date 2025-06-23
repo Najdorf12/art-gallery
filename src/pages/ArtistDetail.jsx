@@ -103,13 +103,15 @@ const ArtistDetail = ({ artistsData }) => {
         <Navbar />
 
         <section className="w-full h-[100dvh] md:h-screen flex flex-col md:flex-row">
-          <div className="w-full h-[90dvh] md:w-1/2  bg-whiteCustom flex flex-col items-center justify-center">
+          <div className="w-full h-[60dvh] pl-[5%] md:h-[90dvh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
             <article>
-              <h6 className="font-title text-8xl md:text-8xl xl:text-[12rem] xl:leading-[12rem] text-stone-300">
-                {artist.firstname + " "} <span className="text-orangeCustom">{artist.lastname}</span>
+              <h6 className="font-title text-8xl md:text-8xl lg:text-[12rem] lg:leading-[12rem] text-stone-300">
+                {artist.firstname + " "}{" "}
+                <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
-              <p className="text-stone-400 max-w-[600px] text-balance mt-6 md:mt-10">
+              <p className="text-stone-400 text-sm pr-3 max-w-[600px] text-balance mt-6 md:mt-10 lg:text-base">
                 {artist.description}
+
                 {artist.description2}
               </p>
               <Link>
@@ -121,20 +123,34 @@ const ArtistDetail = ({ artistsData }) => {
             </article>
           </div>
 
-          <section className="w-full h-[50dvh] md:w-1/2 md:h-screen flex flex-col justify-end">
-            <div className="w-[90%] self-end h-[1dvh] bg-grayCustom "></div>
-            <div className="w-full h-[50dvh] bg-orangeCustom "></div>
+          <section className="w-full h-[40dvh] md:w-1/2 md:h-screen flex flex-col items-end justify-end">
+            <div className="w-[30%] md:w-[90%] h-[1dvh] bg-grayCustom "></div>
+            <div className="w-[50%] md:w-full h-[50dvh] bg-orangeCustom "></div>
           </section>
         </section>
 
-        <section className="w-full relative py-24 text-stone-300 bg-blackCustom flex justify-end items-center">
-          <p className="w-1/2 relative z-50 px-12 self-end text-balance text-grayCustom">{artist.description3}</p>
-          <div className="absolute left-0 z-5 bg-grayCustom w-[50%] h-full"></div>
+        {/* DESCRIPTION3 */}
+        <section className="w-full relative py-12 md:py-24 text-stone-300 bg-blackCustom flex justify-end items-center">
+          <div className="w-[90%] relative z-50 self-end text-balance text-grayCustom text-sm px-4 lg:pr-32  lg:w-[70%] lg:text-base">
+            {artist.description3}
+            {/*    <div className="flex items-center justify-start mt-12 gap-6">
+              <div className="flex items-center font-text gap-2">
+                <i className="bxr bx-phone text-xl"></i>
+                {artist.phone}
+              </div>
+              <div className="flex items-center font-text gap-2">
+                <i class="bxr  bx-envelope text-xl"></i>
+                {artist.email}
+              </div>
+            </div> */}
+          </div>
+          <div className="absolute left-0 z-5 bg-grayCustom w-[5%] h-full lg:w-[25%]"></div>
         </section>
+
         {/* Images Section */}
         <section
           ref={cardsContainerRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5 my-[200px] mb-[400px]"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3 px-1 md:px-5 my-[150px] mb-[300px]"
         >
           {artistImages.map((img, index) => (
             <div
@@ -146,7 +162,7 @@ const ArtistDetail = ({ artistsData }) => {
                 <img
                   src={img}
                   alt={`Artist work ${index + 1}`}
-                  className="card-cover w-full h-auto min-h-full object-cover absolute top-0 left-0"
+                  className="card-cover w-full h-auto min-h-full object-cover object-center absolute top-0 left-0"
                   loading="lazy"
                 />
               </figure>
