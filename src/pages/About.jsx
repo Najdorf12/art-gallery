@@ -2,6 +2,7 @@ import arrow from "/arrow-orange.png";
 import Navbar from "../components/Navbar";
 import TsParticlesBg from "../components/TsParticlesBg";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 const artistsBtns = [
   {
     name: "Laura Aguirre",
@@ -14,13 +15,17 @@ const artistsBtns = [
     data2: "Lorem impsum",
   },
   {
-    name: "La Fabrika",
+    name: "Lorem Ipsum",
     data1: "Lorem impsum",
     data2: "Lorem impsum",
   },
 ];
 
 const About = ({ handleButtonClick }) => {
+  const titleRef = useRef();
+    const subtitleRef = useRef();
+    const textRef = useRef();
+    const formRef = useRef();
   return (
     <section className="flex flex-col bg-blackCustom h-[100dvh] md:h-screen overflow-hidden relative w-full justify-evenly pt-3 lg:flex-row lg:items-center lg:pl-[5%]">
       <Navbar />

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import TsParticlesBg from "../components/TsParticlesBg";
 import Navbar from "../components/Navbar";
 import { gsap } from "gsap";
-import { useRef, useEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 
 const Contact = () => {
   const {
@@ -16,9 +16,9 @@ const Contact = () => {
   const textRef = useRef();
   const formRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timeline = gsap.timeline({
-      defaults: { duration:  .9, ease: "power1.out" },
+      defaults: { duration:  .8, ease: "power1.out" },
     });
 
     timeline
