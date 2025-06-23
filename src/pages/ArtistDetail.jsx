@@ -103,13 +103,14 @@ const ArtistDetail = ({ artistsData }) => {
         <Navbar />
 
         <section className="w-full h-[100dvh] md:h-screen flex flex-col md:flex-row">
-          <div className="w-full h-[80dvh] md:w-1/2  bg-whiteCustom flex flex-col items-center justify-center">
+          <div className="w-full h-[90dvh] md:w-1/2  bg-whiteCustom flex flex-col items-center justify-center">
             <article>
               <h6 className="font-title text-8xl md:text-8xl xl:text-[12rem] xl:leading-[12rem] text-stone-300">
-                {artist.firstname + " " } <span>{artist.lastname}</span>
+                {artist.firstname + " "} <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
               <p className="text-stone-400 max-w-[600px] text-balance mt-6 md:mt-10">
                 {artist.description}
+                {artist.description2}
               </p>
               <Link>
                 <button className="flex font-text2 font-medium justify-center items-center gap-6 text-orangeCustom mt-9 border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
@@ -119,12 +120,17 @@ const ArtistDetail = ({ artistsData }) => {
               </Link>
             </article>
           </div>
-          <div className="w-full h-[50dvh] md:w-1/2 md:h-[50vh] self-end bg-orangeCustom"></div>
+
+          <section className="w-full h-[50dvh] md:w-1/2 md:h-screen flex flex-col justify-end">
+            <div className="w-[90%] self-end h-[1dvh] bg-grayCustom "></div>
+            <div className="w-full h-[50dvh] bg-orangeCustom "></div>
+          </section>
         </section>
 
-        <div className="w-full py-24 text-stone-300 bg-whiteCustom flex justify-center items-center">
-          <p className="max-w-[600px] text-center">{artist.description2}</p>
-        </div>
+        <section className="w-full relative py-24 text-stone-300 bg-blackCustom flex justify-end items-center">
+          <p className="w-1/2 relative z-50 px-12 self-end text-balance text-grayCustom">{artist.description3}</p>
+          <div className="absolute left-0 z-5 bg-grayCustom w-[50%] h-full"></div>
+        </section>
         {/* Images Section */}
         <section
           ref={cardsContainerRef}

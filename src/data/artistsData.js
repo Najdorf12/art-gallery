@@ -25,8 +25,9 @@ export const artistsData = [
     email: "laura.en.obra@gmail.com",
     phone: "+56988479123",
     description: `Licenciada en Artes – Diplomado en Prácticas y Didácticas del grabado 
-Pontificia Universidad Católica de Valparaíso, Chile`,
-    description2: `Licenciada en Arte en la PUCV, grabadora y artista textil, con experiencia en montaje artístico. Actualmente estudia Arquitectura en la misma universidad, buscando nuevas escalas espaciales. 
+Pontificia Universidad Católica de Valparaíso, Chile.`,
+    description2: ` Participó en exposiciones colectivas y residencias artísticas que han ampliado el lenguaje visual. La conexión entre emoción y técnica, donde el gesto y la materia dialogan para ser parte del proceso de obra: pliegues y despliegues que transforman la imagen en un acto vivo.`,
+    description3: `Licenciada en Arte en la PUCV, grabadora y artista textil, con experiencia en montaje artístico. Actualmente estudia Arquitectura en la misma universidad, buscando nuevas escalas espaciales. 
     Participó en exposiciones colectivas y residencias artísticas que han ampliado el lenguaje visual. La conexión entre emoción y técnica, donde el gesto y la materia dialogan para ser parte del proceso de obra: pliegues y despliegues que transforman la imagen en un acto vivo. Cada pieza es un encuentro entre lo íntimo y lo colectivo, un diálogo donde la imagen se construye y deconstruye, como una memoria que se transforma con el tiempo. El grabado es territorio fértil para explorar las tensiones entre lo controlado y lo espontáneo, permitiendo que el gesto se funda con la técnica y emerja como presencia.`,
     obras: [
       {
