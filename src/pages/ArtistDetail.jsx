@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import arrow from "/arrow-orange.png";
 import { ReactLenis } from "lenis/react";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ArtistDetail = ({ artistsData }) => {
@@ -14,10 +17,12 @@ const ArtistDetail = ({ artistsData }) => {
   const cardsRef = useRef([]);
   const lenisRef = useRef();
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [imageSelected, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const modalRef = useRef(null);
 
   const artistImages = artist.obras.map((obra) => obra.image);
 
+  // Configuración de Lenis
   useEffect(() => {
     function update(time) {
       lenisRef.current?.lenis?.raf(time * 1000);
@@ -26,8 +31,8 @@ const ArtistDetail = ({ artistsData }) => {
     return () => gsap.ticker.remove(update);
   }, []);
 
+  // Carga de imágenes
   useEffect(() => {
-    // Esperar a que todas las imágenes se carguen
     const loadImages = () => {
       const promises = artistImages.map((src) => {
         return new Promise((resolve, reject) => {
@@ -44,7 +49,8 @@ const ArtistDetail = ({ artistsData }) => {
     loadImages();
   }, [artistImages]);
 
-  useEffect(() => {
+  // Animaciones GSAP
+  useLayoutEffect(() => {
     if (!imagesLoaded) return;
 
     const ctx = gsap.context(() => {
@@ -56,11 +62,8 @@ const ArtistDetail = ({ artistsData }) => {
         const containerHeight = card.offsetHeight;
         const imgHeight = img.naturalHeight;
 
-        // Calcular el movimiento necesario
         const movement = imgHeight - containerHeight;
-        const movementPercent = (movement / containerHeight) * 100;
 
-        // Ajustar dinámicamente la altura de la imagen
         gsap.set(cover, {
           height: `${imgHeight}px`,
           y: movement > 0 ? 0 : "50%",
@@ -97,25 +100,27 @@ const ArtistDetail = ({ artistsData }) => {
     return () => ctx.revert();
   }, [imagesLoaded]);
 
-  if (imageSelected !== null)
-    return (
-      <div className="w-full h-[100dvh] md:h-screen bg-blackCustom">
-        <button
-          onClick={() => setSelectedImage(null)}
-          className="w-12 h-12 absolute top-3 right-3 bg-orangeCustom z-50 text-xl text-whiteCustom"
-        >
-          X
-        </button>
-        <figure className="z-10 w-full h-screen xl:h-auto">
-          <img
-            src={imageSelected}
-            alt="img-artist"
-            className="card-cover w-full h-full min-h-full object-cover object-center absolute top-0 left-0"
-            loading="lazy"
-          />
-        </figure>
-      </div>
-    );
+  // Efecto para el modal
+  useLayoutEffect(() => {
+    if (selectedImage) {
+      // Pausar Lenis cuando el modal está abierto
+      lenisRef.current?.lenis?.stop();
+      // Animación de entrada del modal
+      gsap.from(modalRef.current, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    } else {
+      // Reanudar Lenis cuando el modal se cierra
+      lenisRef.current?.lenis?.start();
+    }
+  }, [selectedImage]);
+
+  const closeModal = (e) => {
+    e?.stopPropagation(); // Evitar que el evento se propague al Zoom
+    setSelectedImage(null);
+  };
 
   return (
     <>
@@ -123,6 +128,33 @@ const ArtistDetail = ({ artistsData }) => {
       <section className="bg-whiteCustom w-full font-text2">
         <Navbar />
 
+        {/* Modal con Zoom */}
+        {selectedImage && (
+          <div
+            ref={modalRef}
+            className="fixed inset-0 bg-whiteCustom bg-opacity-95 z-50 flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-orangeCustom z-50 text-xl text-whiteCustom hover:bg-orange-600 transition-colors"
+            >
+              X
+            </button>
+            <div className="w-full h-full flex items-center justify-center">
+              <Zoom zoomMargin={40}>
+                <img
+                  src={selectedImage}
+                  alt="img-artist"
+                  className="max-w-full max-h-screen object-contain"
+                  style={{ cursor: "zoom-in" }}
+                />
+              </Zoom>
+            </div>
+          </div>
+        )}
+
+        {/* Contenido principal */}
         <section className="w-full h-screen flex flex-col md:flex-row">
           <div className="w-full h-[60vh] pt-2 pl-[5%] md:h-[90vh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
             <article>
@@ -132,7 +164,6 @@ const ArtistDetail = ({ artistsData }) => {
               </h6>
               <p className="text-stone-400 text-sm pr-3 max-w-[600px] text-balance mt-6 md:mt-10 lg:text-base">
                 {artist.description}
-
                 {artist.description2}
               </p>
               <Link>
@@ -154,16 +185,6 @@ const ArtistDetail = ({ artistsData }) => {
         <section className="w-full relative py-12 md:py-24 text-stone-300 bg-blackCustom flex justify-end items-center">
           <div className="w-[90%] relative z-50 self-end text-balance text-grayCustom text-sm px-4 lg:pr-32  lg:w-[70%] lg:text-base">
             {artist.description3}
-            {/*    <div className="flex items-center justify-start mt-12 gap-6">
-              <div className="flex items-center font-text gap-2">
-                <i className="bxr bx-phone text-xl"></i>
-                {artist.phone}
-              </div>
-              <div className="flex items-center font-text gap-2">
-                <i class="bxr  bx-envelope text-xl"></i>
-                {artist.email}
-              </div>
-            </div> */}
           </div>
           <div className="absolute left-0 z-5 bg-grayCustom w-[5%] h-full lg:w-[25%]"></div>
         </section>
@@ -177,8 +198,8 @@ const ArtistDetail = ({ artistsData }) => {
             <div
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="relative w-full h-[80vh] rounded-xl overflow-hidden"
-              onClick={() => setSelectedImage(img)} // Altura fija en vh
+              className="relative w-full h-[80vh] rounded-xl overflow-hidden cursor-pointer"
+              onClick={() => setSelectedImage(img)}
             >
               <figure className="absolute inset-0 overflow-hidden z-10">
                 <img
@@ -188,9 +209,6 @@ const ArtistDetail = ({ artistsData }) => {
                   loading="lazy"
                 />
               </figure>
-              {/* <div className="absolute w-12 -rotate-45 bottom-1 right-2 z-[600]">
-                <img src={arrow} alt="" />
-              </div> */}
             </div>
           ))}
         </section>
