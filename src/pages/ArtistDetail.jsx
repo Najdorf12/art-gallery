@@ -120,11 +120,11 @@ const ArtistDetail = ({ artistsData }) => {
   return (
     <>
       <ReactLenis root ref={lenisRef} autoRaf={false} />
-      <section className="bg-whiteCustom min-h-screen w-full font-text2">
+      <section className="bg-whiteCustom w-full font-text2">
         <Navbar />
 
         <section className="w-full h-screen flex flex-col md:flex-row">
-          <div className="w-full h-[60dvh] pt-2 pl-[5%] md:h-[90dvh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
+          <div className="w-full h-[60vh] pt-2 pl-[5%] md:h-[90vh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
             <article>
               <h6 className="font-title text-8xl md:text-8xl lg:text-[12rem] lg:leading-[12rem] text-stone-300">
                 {artist.firstname + " "}{" "}
