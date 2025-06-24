@@ -23,19 +23,9 @@ const Contact = () => {
 
     timeline
       .fromTo(titleRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
-      .fromTo(subtitleRef.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
-      .fromTo(
-        textRef.current,
-        { x: -40, opacity: 0 },
-        { x: 0, opacity: 1 },
-        "<"
-      )
-      .fromTo(
-        formRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1 },
-        "<"
-      );
+      .fromTo(formRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo(subtitleRef.current, { x: -40, opacity: 0 }, { x: 0, opacity: 1 })
+      .fromTo(textRef.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 }, "<");
   }, []);
 
   const onSubmit = async (data) => {
@@ -75,15 +65,12 @@ const Contact = () => {
             <span className="text-whiteCustom">C</span>ONTACTO
           </h6>
           <div className="z-50 px-4 font-text2 text-balance max-w-[500px] mt-6 ">
-            <div
-              ref={subtitleRef}
-              className="text-grayCustom text-start self-start text-lg xl:text-xl  2xl:text-3xl"
-            >
+            <div className="text-grayCustom text-start self-start text-lg xl:text-xl  2xl:text-3xl">
               HABLEMOS AHORA
             </div>
-            <div className="bg-orangeCustom w-32 h-[1px] z-50 relative mt-1 xl:w-[430px] 2xl:w-40"></div>
+            <div className="bg-orangeCustom w-44 h-[1px] z-50 relative mt-1 xl:w-[430px] 2xl:w-40"></div>
             <p
-              ref={textRef}
+              ref={subtitleRef}
               style={{ animation: "appear 3s ease-out" }}
               className="text-start text-grayCustom text-sm mt-3 md:text-base xl:mt-5 2xl:text-lg 2xl:mt-7"
             >
@@ -148,7 +135,7 @@ const Contact = () => {
             </form>
           </div>
           <div
-            ref={subtitleRef}
+            ref={textRef}
             id="text-reveal2"
             className="relative z-50 text-grayCustom font-text text-center text-balance mt-5 text-sm px-4 lg:text-base lg:mt-7 2xl:text-lg"
           >
