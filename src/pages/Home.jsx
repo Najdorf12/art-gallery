@@ -65,7 +65,7 @@ const Home = () => {
       <TsParticlesBg />
       <Navbar />
 
-      <section className="w-full h-full relative flex flex-col  items-center mt-20 lg:mt-20">
+      <section className="w-full h-full relative flex flex-col items-center mt-20 lg:mt-16">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
