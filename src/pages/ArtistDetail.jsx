@@ -108,7 +108,7 @@ const ArtistDetail = ({ artistsData }) => {
       // Animación de entrada del modal
       gsap.from(modalRef.current, {
         opacity: 0,
-        duration: 0.3,
+        duration: 2,
         ease: "power2.out",
       });
     } else {
