@@ -103,16 +103,13 @@ const ArtistDetail = ({ artistsData }) => {
   // Efecto para el modal
   useLayoutEffect(() => {
     if (selectedImage) {
-      // Pausar Lenis cuando el modal está abierto
       lenisRef.current?.lenis?.stop();
-      // Animación de entrada del modal
       gsap.from(modalRef.current, {
         opacity: 0,
         duration: 2,
         ease: "power2.out",
       });
     } else {
-      // Reanudar Lenis cuando el modal se cierra
       lenisRef.current?.lenis?.start();
     }
   }, [selectedImage]);
