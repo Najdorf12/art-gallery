@@ -1,4 +1,5 @@
 import ArtistDetail from "./pages/ArtistDetail";
+import ArtistDetail2 from "./pages/ArtistDetail2";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { artistsData } from "./data/artistsData";
 
@@ -19,7 +20,7 @@ const App = () => {
           <Route path="/SobreNosotros" element={<About />} />
           <Route
             path="/Artista/:id"
-            element={<ArtistDetail artistsData={artistsData} />}
+            element={<ArtistDetail2 artistsData={artistsData} />}
           />
         </Routes>
       </BrowserRouter>
