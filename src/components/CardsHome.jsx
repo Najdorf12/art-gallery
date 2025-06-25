@@ -23,7 +23,7 @@ const CardsHome = ({ artist }) => {
           </p>
         </article>
       </div>{" "}
-      <figure className="w-7 p-1 absolute bottom-0.5 -right-1 md:bottom-1 md:right-1 -rotate-45">
+      <figure className="w-6 md:w-7 p-1 absolute bottom-1 -right-2 md:bottom-1 md:-right-2 -rotate-45">
         <img src={arrowOrange} alt="" />
       </figure>
     </Link>
