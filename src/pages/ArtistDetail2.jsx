@@ -140,7 +140,7 @@ const ArtistDetail = ({ artistsData }) => {
 
         {/* Images Section */}
         <section className="w-full  flex items-center justify-center">
-          <div className="mt-4 mb-6 lg:mt-6 ">
+          <div className="mt-4 lg:mt-20 ">
             <Slider obras={artist?.obras} />
           </div>
         </section>

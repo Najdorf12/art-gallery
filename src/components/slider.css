@@ -73,12 +73,12 @@
 @media(min-width:600px){
   .swiper-slide {
     height: 600px;
+    max-width: 500px;
   }
 }
 @media(min-width:1000px){
   .swiper-slide {
     position: relative;
-    max-width: 430px;
     aspect-ratio: 1/1;
     border-radius: 10px;
   }
@@ -87,7 +87,7 @@
 @media(min-width:1300px){
   .swiper-slide {
     position: relative;
-    max-width: 500px;
+    max-width: 485px;
     aspect-ratio: 1/1;
     border-radius: 10px;
   }
