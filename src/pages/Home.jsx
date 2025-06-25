@@ -70,7 +70,7 @@ const Home = () => {
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.8rem] text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem] dark:from-orangeCustom dark:via-grayCustom dark:to-grayCustom  "
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.8rem] text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
           >
             GALERÍA INVISIBLE
           </h1>
