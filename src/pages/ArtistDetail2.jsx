@@ -118,7 +118,7 @@ const ArtistDetail = ({ artistsData }) => {
 
               <div
                 ref={modalRef}
-                className="relative max-w-6xl w-full p-1 mt-6 md:mt-0"
+                className="relative max-w-6xl w-full p-1 mt-7 md:mt-0"
               >
                 <article className="p-2">
                   <div className="flex flex-col md:flex-row gap-8 md:items-start md:justify-center ">
@@ -126,10 +126,12 @@ const ArtistDetail = ({ artistsData }) => {
                       <img
                         src={selectedImage.image}
                         alt={selectedImage.name}
-                        className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[900px] max-w-[520px] rounded-sm"
+                        className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[680px] max-w-[520px] rounded-sm"
                       />
                     </div>
-                    <div className=" pl-1 md:pt-14 md:pl-6 xl:pt-16">
+                    <div className=" pl-1 md:pt-14 md:pl-12 md:pt-32 relative ">
+                      <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
+                      <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
                       <h6 className="text-6xl leading-10 font-title text-stone-300 md:text-8xl xl:text-9xl">
                         {selectedImage.name}
                       </h6>
@@ -139,6 +141,7 @@ const ArtistDetail = ({ artistsData }) => {
                         <li>{selectedImage.description.detail3}</li>
                         <li>{selectedImage.description.detail4}</li>
                         <li>{selectedImage.description.detail5}</li>
+
                       </ul>
                     </div>
                   </div>
