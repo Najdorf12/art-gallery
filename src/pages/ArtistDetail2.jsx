@@ -102,7 +102,7 @@ const ArtistDetail = ({ artistsData }) => {
           <div className="w-[90%] relative z-50 self-end text-balance text-grayCustom text-sm px-4 lg:pr-32  lg:w-[70%] lg:text-base">
             {artist.description3}
           </div>
-          <div className="absolute left-0 z-5 bg-grayCustom w-[5%] h-full lg:w-[25%]"></div>
+          <div className="absolute left-0 z-5 bg-whiteCustom w-[5%] h-full lg:w-[25%]"></div>
         </section>
 
         {/* Images Section */}
