@@ -13,6 +13,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      
         <Routes>
           <Route path="/" element={<Home /* artistsData={artistsData} */ />} />
           <Route path="/Proyecto" element={<Project />} />
@@ -29,4 +30,3 @@ const App = () => {
 };
 
 export default App;
-/*   */
