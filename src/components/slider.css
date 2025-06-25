@@ -27,7 +27,8 @@
 
 .swiper-slide {
   position: relative;
-  max-width: 395px;
+  max-width: 390px;
+  height: 600px;
   aspect-ratio: 1/1;
   border-radius: 3px;
 }
@@ -52,7 +53,7 @@
   background-color: rgba(28, 22, 37, 0.6);
   border-radius: inherit;
   opacity: 0;
-  transition: all 6s linear;
+  transition: all 12s linear;
 }
 
 .swiper-slide:hover .overlay {
@@ -68,6 +69,11 @@
   color: #eb0b0b;
   opacity: 1;
   cursor: pointer;
+}
+@media(min-width:600px){
+  .swiper-slide {
+    height: 600px;
+  }
 }
 @media(min-width:1000px){
   .swiper-slide {

@@ -74,7 +74,7 @@ const ArtistDetail = ({ artistsData }) => {
   return (
     <>
       <ReactLenis root ref={lenisRef} autoRaf={false} />
-      <section className="bg-whiteCustom w-full font-text2">
+      <section className="bg-whiteCustom w-full font-text2 overflow-hidden">
         <Navbar />
 
         {/* Modal con Zoom */}
@@ -139,7 +139,7 @@ const ArtistDetail = ({ artistsData }) => {
         </section>
 
         {/* Images Section */}
-        <section className="w-full">
+        <section className="w-full  flex items-center justify-center">
           <div className="mt-4 mb-6 lg:mt-6 ">
             <Slider obras={artist?.obras} />
           </div>
