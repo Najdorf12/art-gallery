@@ -13,6 +13,7 @@ const ArtistDetail = ({ artistsData }) => {
   const { id } = useParams();
   const lenisRef = useRef();
   const modalRef = useRef();
+  const textRef = useRef();
 
   const artist = artistsData.find((artist) => artist.id === id);
   const artistImages = artist.obras.map((obra) => obra.image);
@@ -31,10 +32,16 @@ const ArtistDetail = ({ artistsData }) => {
     if (showModal) {
       // Animación de entrada
       gsap.from(modalRef.current, {
-        x: 200,
+        y: 200,
         scale: 1,
-        opacity: 0,
-        duration: 0.7,
+        duration: 1,
+        ease: "power2.out",
+      });
+      gsap.from(textRef.current, {
+        x: -60,
+        opacity:0,
+        scale: 1,
+        duration: 1,
         ease: "power2.out",
       });
     }
@@ -129,7 +136,7 @@ const ArtistDetail = ({ artistsData }) => {
                         className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[680px] max-w-[520px] rounded-sm"
                       />
                     </div>
-                    <div className=" pl-1  md:pl-12 md:pt-32 relative ">
+                    <div ref={textRef} className="pl-1 md:pl-12 md:pt-32 relative">
                       <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
                       <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
                       <h6 className="text-6xl leading-10 font-title text-stone-300 md:text-8xl xl:text-9xl">
@@ -141,7 +148,6 @@ const ArtistDetail = ({ artistsData }) => {
                         <li>{selectedImage.description.detail3}</li>
                         <li>{selectedImage.description.detail4}</li>
                         <li>{selectedImage.description.detail5}</li>
-
                       </ul>
                     </div>
                   </div>
