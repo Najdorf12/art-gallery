@@ -56,7 +56,7 @@ const Project = () => {
   };
 
   return (
-    <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-40 flex flex-col justify-start overflow-hidden">
+    <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-40 flex flex-col justify-start overflow-hidden dark:bg-whiteCustom">
       <TsParticlesBg />
       <Navbar />
       <div className="w-full z-[550] relative flex flex-col px-3 lg:pl-[5%] h-full">
@@ -68,11 +68,11 @@ const Project = () => {
                 className="font-title leading-[4.8rem] text-orangeCustom text-7xl max-w-[400px] lg:max-w-[600px] lg:leading-[8.1rem] lg:text-[8rem] 2xl:text-[10rem] 2xl:max-w-[800px] 2xl:leading-[10.1rem]"
               >
                 Voces gráficas de{" "}
-                <span className="text-whiteCustom">Valpo</span> en Europa
+                <span className="text-whiteCustom dark:text-grayCustom">Valpo</span> en Europa
               </h1>
               <p
                 ref={subtitle2Ref}
-                className="text-sm font-text2 mt-4 text-grayCustom lg:mt-6 lg:text-lg"
+                className="text-sm font-text2 mt-4 text-grayCustom lg:mt-6 lg:text-lg dark:text-stone-400"
               >
                 Arte Gráfico / Pintura / Cultura / Poética Urbana
               </p>
@@ -94,13 +94,13 @@ const Project = () => {
                 className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative"
               >
                 <Link to={"/Proyecto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
+                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500 dark:text-grayCustom dark:border-grayCustom">
                     PLANO
                     <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
                   </button>
                 </Link>
                 <Link to={"/Contacto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
+                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-50 dark:text-stone-400 dark:border-grayCustom">
                     CONTACTO
                     <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
                   </button>
