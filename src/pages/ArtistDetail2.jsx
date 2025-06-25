@@ -139,10 +139,10 @@ const ArtistDetail = ({ artistsData }) => {
                     <div ref={textRef} className="pl-1 md:pl-12 md:pt-32 relative">
                       <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
                       <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
-                      <h6 className="text-6xl leading-10 font-title text-stone-300 md:text-8xl xl:text-9xl">
+                      <h6 className="text-6xl leading-10 font-title text-whiteCustom md:text-8xl xl:text-9xl">
                         {selectedImage.name}
                       </h6>
-                      <ul className="mt-8 flex flex-col gap-2 text-stone-400 text-sm md:text-base md:mt-16 md:gap-3 lg:mt-20">
+                      <ul className="mt-8 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3 lg:mt-20">
                         <li>{selectedImage.description.detail1}</li>
                         <li>{selectedImage.description.detail2}</li>
                         <li>{selectedImage.description.detail3}</li>
