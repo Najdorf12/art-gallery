@@ -111,29 +111,29 @@ const ArtistDetail = ({ artistsData }) => {
             <div className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-blackCustom px-3">
               <button
                 onClick={closeModal}
-                className="absolute -top-3 right-2 z-50 text-6xl text-orangeCustom"
+                className="absolute -top-5 right-2 z-50 text-7xl text-orangeCustom md:right-6 md:-top-2 xl:text-8xl"
               >
                 ×
               </button>
 
               <div
                 ref={modalRef}
-                className="relative bg-whiteCustom max-w-4xl w-full rounded-lg py-2 mt-6"
+                className="relative max-w-6xl w-full p-1 mt-6 md:mt-0"
               >
-                <article className=" p-2">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-1/2">
+                <article className="p-2">
+                  <div className="flex flex-col md:flex-row gap-8 md:items-start md:justify-center ">
+                    <div className="">
                       <img
                         src={selectedImage.image}
                         alt={selectedImage.name}
-                        className="w-full h-auto object-contain"
+                        className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[900px] max-w-[520px] rounded-sm"
                       />
                     </div>
-                    <div className="md:w-1/2 pl-2">
-                      <h6 className="text-7xl leading-12 font-title text-stone-300">
+                    <div className=" pl-1 md:pt-14 md:pl-6 xl:pt-16">
+                      <h6 className="text-6xl leading-10 font-title text-stone-300 md:text-8xl xl:text-9xl">
                         {selectedImage.name}
                       </h6>
-                      <ul className="mt-9 flex flex-col gap-2 text-grayCustom text-sm">
+                      <ul className="mt-8 flex flex-col gap-2 text-stone-400 text-sm md:text-base md:mt-16 md:gap-3 lg:mt-20">
                         <li>{selectedImage.description.detail1}</li>
                         <li>{selectedImage.description.detail2}</li>
                         <li>{selectedImage.description.detail3}</li>
