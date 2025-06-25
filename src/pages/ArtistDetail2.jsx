@@ -129,7 +129,7 @@ const ArtistDetail = ({ artistsData }) => {
                         className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[680px] max-w-[520px] rounded-sm"
                       />
                     </div>
-                    <div className=" pl-1 md:pt-14 md:pl-12 md:pt-32 relative ">
+                    <div className=" pl-1  md:pl-12 md:pt-32 relative ">
                       <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
                       <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
                       <h6 className="text-6xl leading-10 font-title text-stone-300 md:text-8xl xl:text-9xl">
