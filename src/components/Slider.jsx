@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -6,10 +6,17 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import "./slider.css"
+import "./slider.css";
 
-export default function Slider({ obras }) {
-  const [windWidth, setWindWidth] = useState(window.innerWidth)
+export default function Slider({ obras, handleSelectedImage }) {
+  const [windWidth, setWindWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <section className="wrapper-slider z-50 ">
@@ -20,7 +27,7 @@ export default function Slider({ obras }) {
             centeredSlides={true}
             initialSlide={3}
             slidesPerView={"auto"}
-            spaceBetween={windWidth < 1000 ? 40 : 120  }
+            spaceBetween={windWidth < 1000 ? 40 : 120}
             coverflowEffect={{
               rotate: 25,
               stretch: 0,
@@ -35,9 +42,9 @@ export default function Slider({ obras }) {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {obras?.map((obra,i) => (
-              <SwiperSlide key={i}>
-                <img src={obra?.image} />
+            {obras?.map((obra, i) => (
+              <SwiperSlide key={i} onClick={() => handleSelectedImage(obra)}>
+                <img src={obra?.image} alt={obra.name} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -45,7 +52,4 @@ export default function Slider({ obras }) {
       </section>
     </>
   );
-}
-{
-  /*  */
 }

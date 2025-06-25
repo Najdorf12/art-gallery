@@ -5,8 +5,6 @@ import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import arrow from "/arrow-orange.png";
 import { ReactLenis } from "lenis/react";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 import Slider from "../components/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,16 +12,13 @@ gsap.registerPlugin(ScrollTrigger);
 const ArtistDetail = ({ artistsData }) => {
   const { id } = useParams();
   const lenisRef = useRef();
+  const modalRef = useRef();
 
   const artist = artistsData.find((artist) => artist.id === id);
-
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const modalRef = useRef(null);
-
   const artistImages = artist.obras.map((obra) => obra.image);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
-  // Configuración de Lenis
   useEffect(() => {
     function update(time) {
       lenisRef.current?.lenis?.raf(time * 1000);
@@ -32,43 +27,35 @@ const ArtistDetail = ({ artistsData }) => {
     return () => gsap.ticker.remove(update);
   }, []);
 
-  // Carga de imágenes
-  useEffect(() => {
-    const loadImages = () => {
-      const promises = artistImages.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
-
-      Promise.all(promises).then(() => setImagesLoaded(true));
-    };
-
-    loadImages();
-  }, [artistImages]);
-
-  // Efecto para el modal
   useLayoutEffect(() => {
-    if (selectedImage) {
-      lenisRef.current?.lenis?.stop();
-      // Animación de entrada del modal
+    if (showModal) {
+      // Animación de entrada
       gsap.from(modalRef.current, {
+        x: 200,
+        scale: 1,
         opacity: 0,
-        duration: 2,
+        duration: 0.7,
         ease: "power2.out",
       });
-    } else {
-      // Reanudar Lenis cuando el modal se cierra
-      lenisRef.current?.lenis?.start();
     }
-  }, [selectedImage]);
+  }, [showModal]);
 
-  const closeModal = (e) => {
-    e?.stopPropagation(); // Evitar que el evento se propague al Zoom
-    setSelectedImage(null);
+  const handleSelectedImage = (imgObra) => {
+    setSelectedImage(imgObra);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    // Animación de salida
+    gsap.to(modalRef.current, {
+      opacity: 1,
+      duration: 0.1,
+      ease: "power2.in",
+      onComplete: () => {
+        setShowModal(false);
+        setSelectedImage(null);
+      },
+    });
   };
 
   return (
@@ -77,35 +64,8 @@ const ArtistDetail = ({ artistsData }) => {
       <section className="bg-whiteCustom w-full font-text2 overflow-hidden">
         <Navbar />
 
-        {/* Modal con Zoom */}
-        {selectedImage && (
-          <div
-            ref={modalRef}
-            className="fixed inset-0 bg-whiteCustom bg-opacity-95 z-50 flex items-center justify-center p-4"
-            onClick={closeModal}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-orangeCustom z-50 text-xl text-whiteCustom hover:bg-orange-600 transition-colors"
-            >
-              X
-            </button>
-            <div className="w-full h-full flex items-center justify-center">
-              <Zoom zoomMargin={40}>
-                <img
-                  src={selectedImage}
-                  alt="img-artist"
-                  className="max-w-full max-h-screen object-contain"
-                  style={{ cursor: "zoom-in" }}
-                />
-              </Zoom>
-            </div>
-          </div>
-        )}
-
-        {/* Contenido principal */}
-        <section className="w-full h-screen flex flex-col md:flex-row">
-          <div className="w-full h-[60vh] pt-2 pl-[5%] md:h-[90vh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
+        <section className="relative w-full h-screen flex flex-col md:flex-row">
+          <section className="w-full h-[60vh] pt-2 pl-[5%] md:h-[90vh] xl:pl-0 md:w-1/2 bg-whiteCustom flex flex-col items-center justify-center">
             <article>
               <h6 className="font-title text-8xl md:text-8xl lg:text-[12rem] lg:leading-[12rem] text-stone-300">
                 {artist.firstname + " "}{" "}
@@ -122,7 +82,7 @@ const ArtistDetail = ({ artistsData }) => {
                 </button>
               </Link>
             </article>
-          </div>
+          </section>
 
           <section className="w-full h-[40dvh] md:w-1/2 md:h-screen flex flex-col items-end justify-end">
             <div className="w-[30%] md:w-[90%] h-[1dvh] bg-grayCustom "></div>
@@ -139,11 +99,65 @@ const ArtistDetail = ({ artistsData }) => {
         </section>
 
         {/* Images Section */}
-        <section className="w-full  flex items-center justify-center">
-          <div className="mt-4 lg:mt-20 ">
-            <Slider obras={artist?.obras} />
+        <section className="w-full relative flex items-center justify-center mt-16">
+          <div className="lg:h-[95vh]">
+            <Slider
+              obras={artist?.obras}
+              handleSelectedImage={handleSelectedImage}
+            />
           </div>
+
+          {showModal && selectedImage && (
+            <div className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-blackCustom px-3">
+              <button
+                onClick={closeModal}
+                className="absolute -top-3 right-2 z-50 text-6xl text-orangeCustom"
+              >
+                ×
+              </button>
+
+              <div
+                ref={modalRef}
+                className="relative bg-whiteCustom max-w-4xl w-full rounded-lg py-2 mt-6"
+              >
+                <article className=" p-2">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/2">
+                      <img
+                        src={selectedImage.image}
+                        alt={selectedImage.name}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                    <div className="md:w-1/2 pl-2">
+                      <h6 className="text-7xl leading-12 font-title text-stone-300">
+                        {selectedImage.name}
+                      </h6>
+                      <ul className="mt-9 flex flex-col gap-2 text-grayCustom text-sm">
+                        <li>{selectedImage.description.detail1}</li>
+                        <li>{selectedImage.description.detail2}</li>
+                        <li>{selectedImage.description.detail3}</li>
+                        <li>{selectedImage.description.detail4}</li>
+                        <li>{selectedImage.description.detail5}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          )}
         </section>
+
+        {/*    <section className="flex items-center justify-center relative">
+            <div className="absolute bottom-2 right-2 flex items-center gap-12 lg:right-24">
+              <figure className="w-6 md:w-12 ">
+                <img className="w-full h-full rotate-180" src={arrow} alt="" />
+              </figure>
+              <figure className="w-6 md:w-12 ">
+                <img className="w-full h-full" src={arrow} alt="" />
+              </figure>
+          </div>
+        </section> */}
       </section>
     </>
   );
