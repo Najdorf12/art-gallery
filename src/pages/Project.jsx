@@ -100,7 +100,7 @@ const Project = () => {
                   </button>
                 </Link>
                 <Link to={"/Contacto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-50 dark:text-stone-400 dark:border-grayCustom">
+                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-50  dark:border-grayCustom">
                     CONTACTO
                     <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
                   </button>
