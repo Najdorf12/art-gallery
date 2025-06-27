@@ -67,31 +67,31 @@ const Home = () => {
       <TsParticlesBg />
       <Navbar />
       <ThemeToggle></ThemeToggle>
-      <section className="w-full h-full relative flex flex-col items-center mt-20 lg:mt-16">
+      <section className="w-full h-full relative flex flex-col items-center mt-12 lg:mt-20">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[5.8rem] text-center lg:text-[18rem] xl:text-[19.2rem] 2xl:text-[22rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[7rem] text-center lg:text-[12rem] xl:text-[16rem] 2xl:text-[22rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
           >
-            GALERÍA INVISIBLE
+            GALERIA EN MOVIMIENTO
           </h1>
-          <div className="text-grayCustom font-text3 mt-3 flex justify-center items-center gap-4 text-sm  lg:text-xl 2xl:text-2xl">
+          <div className="text-grayCustom font-text3 mt-2 flex justify-center items-center gap-4 text-sm  lg:text-xl 2xl:text-2xl">
             <span
               ref={lineRef}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[570px]"
             ></span>
             EXPOSICIÓN COLECTIVA{" "}
             <span
               ref={lineRef2}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[570px]"
             ></span>
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 mt-3 lg:text-base lg:text-balance xl:mt-3 xl:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[400px] mt-3 lg:text-base lg:text-balane lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
           >
-            Galería Invisible nace como el catálogo de la exposición colectiva
-            “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a
+            Galería en Movimiento nace como el catálogo de la exposición colectiva
+            “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
             artistas contemporáneos de Valparaíso. Este grupo de artistas
             utilizan la gráfica y el soporte bidimensional como herramienta
             discursiva para desarrollar una investigación estética, poética y
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full mt-16 lg:mt-9 lg:gap-x-12 xl:gap-x-24 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full mt-4 lg:mt-12 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />

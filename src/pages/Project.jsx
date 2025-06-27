@@ -68,7 +68,10 @@ const Project = () => {
                 className="font-title leading-[4.8rem] text-orangeCustom text-7xl max-w-[400px] lg:max-w-[600px] lg:leading-[8.1rem] lg:text-[8rem] 2xl:text-[10rem] 2xl:max-w-[800px] 2xl:leading-[10.1rem]"
               >
                 Voces gráficas de{" "}
-                <span className="text-whiteCustom dark:text-grayCustom">Valpo</span> en Europa
+                <span className="text-whiteCustom dark:text-grayCustom">
+                  Valpo
+                </span>{" "}
+                en Europa
               </h1>
               <p
                 ref={subtitle2Ref}
@@ -80,14 +83,24 @@ const Project = () => {
                 ref={subtitleRef}
                 className="text-sm text-grayCustom font-text2 font-medium text-balance mt-4 max-w-[800px] lg:mt-5 lg:text-base 2xl:text-lg 2xl:max-w-[920px]"
               >
-                La propuesta está enfocada en llevar el proyecto “Galería
+                El propósito principal de este proyecto es promover la
+                visibilidad y comercialización de la obra gráfica y pictórica de
+                cuatro artistas chilenos por el circuito de arte global, tomando
+                España como punto de partida para esta travesía por europa. La
+                propuesta busca llevar el proyecto “Galería en Movimiento” a un
+                circuito de exhibición por espacios relevantes dentro de la
+                escena de vanguardia artistica en España. Estableciendo una red
+                de colaboración que permita la circulación, despliegue y
+                divulgación de la obra de este grupo de artistas, construyendo
+                una conexión estable entre la obra y el mercado de arte europeo.
+                {/*   La propuesta está enfocada en llevar el proyecto “Galería
                 Invisible” a un circuito de exhibición y venta en importantes
                 galerías de arte contemporáneo en España. Buscando así,
                 establecer una red de colaboración que permita la circulación y
                 promoción de este grupo de artistas. Obtener la consolidación de
                 sus trabajos en el medio y lograr una presencia estable en el
                 mercado de arte europeo, promoviendo así su proyección
-                internacional.
+                internacional. */}
               </p>
               <div
                 ref={btnRef}
