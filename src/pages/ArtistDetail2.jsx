@@ -41,7 +41,7 @@ const ArtistDetail = ({ artistsData }) => {
       gsap.from(textRef.current, {
         y: -50,
         opacity: 0,
-        delay: .7,
+        delay: .6,
         scale: 1,
         duration: 1,
         ease: "power1",
@@ -49,7 +49,7 @@ const ArtistDetail = ({ artistsData }) => {
       gsap.from(imgRef.current, {
         x: 60,
         opacity: 0,
-        delay: .7,
+        delay: .6,
         duration: 1,
         ease: "power1",
       });
