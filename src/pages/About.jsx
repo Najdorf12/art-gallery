@@ -120,5 +120,5 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
     </section>
   );
 };
-
+ 
 export default About;
