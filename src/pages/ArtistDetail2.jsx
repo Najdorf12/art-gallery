@@ -13,6 +13,7 @@ const ArtistDetail = ({ artistsData }) => {
   const { id } = useParams();
   const lenisRef = useRef();
   const modalRef = useRef();
+  const imgRef = useRef();
   const textRef = useRef();
 
   const artist = artistsData.find((artist) => artist.id === id);
@@ -32,17 +33,25 @@ const ArtistDetail = ({ artistsData }) => {
     if (showModal) {
       // Animación de entrada
       gsap.from(modalRef.current, {
-        y: 200,
+        x: "100%",
         scale: 1,
-        duration: 1,
-        ease: "power2.out",
+        duration: .7,
+        ease: "power1",
       });
       gsap.from(textRef.current, {
-        x: -60,
-        opacity:0,
+        y: -50,
+        opacity: 0,
+        delay: .7,
         scale: 1,
         duration: 1,
-        ease: "power2.out",
+        ease: "power1",
+      });
+      gsap.from(imgRef.current, {
+        x: 60,
+        opacity: 0,
+        delay: .7,
+        duration: 1,
+        ease: "power1",
       });
     }
   }, [showModal]);
@@ -115,7 +124,10 @@ const ArtistDetail = ({ artistsData }) => {
           </div>
 
           {showModal && selectedImage && (
-            <div className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-blackCustom px-3">
+            <div
+              ref={modalRef}
+              className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-blackCustom px-3"
+            >
               <button
                 onClick={closeModal}
                 className="absolute -top-5 right-2 z-50 text-7xl text-orangeCustom md:right-6 md:-top-2 xl:text-8xl"
@@ -123,20 +135,21 @@ const ArtistDetail = ({ artistsData }) => {
                 ×
               </button>
 
-              <div
-                ref={modalRef}
-                className="relative max-w-6xl w-full p-1 mt-7 md:mt-0"
-              >
+              <div className="relative max-w-6xl w-full p-1 mt-7 md:mt-0">
                 <article className="p-2">
                   <div className="flex flex-col md:flex-row gap-8 md:items-start md:justify-center ">
                     <div className="">
                       <img
+                        ref={imgRef}
                         src={selectedImage.image}
                         alt={selectedImage.name}
                         className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[680px] max-w-[520px] rounded-sm"
                       />
                     </div>
-                    <div ref={textRef} className="pl-1 md:pl-12 md:pt-32 relative">
+                    <div
+                      ref={textRef}
+                      className="pl-1 md:pl-12 md:pt-32 relative"
+                    >
                       <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
                       <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
                       <h6 className="text-6xl leading-10 font-title text-whiteCustom md:text-8xl xl:text-9xl">
