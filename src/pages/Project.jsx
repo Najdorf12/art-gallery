@@ -56,10 +56,10 @@ const Project = () => {
   };
 
   return (
-    <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-40 flex flex-col justify-start overflow-hidden dark:bg-whiteCustom">
+    <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-50 flex flex-col justify-start overflow-hidden dark:bg-whiteCustom">
       <TsParticlesBg />
       <Navbar />
-      <div className="w-full z-[550] relative flex flex-col px-3 lg:pl-[5%] h-full">
+      <div className="w-full z-50 relative flex flex-col px-3 lg:pl-[5%] h-full">
         <div ref={containerRef} className="relative">
           {activeArticle === "project" && (
             <article className="flex flex-col justify-start items-start relative z-50 w-full cursor-default mt-20 xl:mt-24 2xl:mt-28">

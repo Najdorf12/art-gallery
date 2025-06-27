@@ -90,9 +90,9 @@ const About = ({ handleButtonClick }) => {
       </article>
       <ul className="flex flex-col gap-1 relative z-50 w-full mt-1 lg:self-end lg:pb-3">
         {artistsBtns?.map((artist, i) => (
-          <Link to={`/Artista/${artist?.id}`}>
+          <Link  key={i} to={`/Artista/${artist?.id}`}>
             <li
-              key={i}
+             
               ref={(el) => (artistRef.current[i] = el)}
               className="flex border-b border-orangeCustom pl-3 py-2 max-w-[500px] lg:max-w-[700px] dark:border-grayCustom"
             >

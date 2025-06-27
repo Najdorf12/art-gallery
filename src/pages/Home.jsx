@@ -5,6 +5,7 @@ import { artistsData } from "../data/artistsData";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ThemeToggle from "../components/ThemeToggle";
+import PageTransition from "./PageTransition";
 
 const Home = () => {
   const titleRef = useRef(null);
