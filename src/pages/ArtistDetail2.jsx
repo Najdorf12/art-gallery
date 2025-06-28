@@ -34,13 +34,15 @@ const ArtistDetail = ({ artistsData }) => {
     if (showModal) {
       // Animación de entrada
       gsap.from(modalRef.current, {
-        x: "100%",
+        y: "100%",
+        borderTopLeftRadius: "80%",
+        borderTopRightRadius: "80%",
         scale: 1,
         duration: 0.7,
         ease: "power1",
       });
       gsap.from(textRef.current, {
-        y: -50,
+        x: -60,
         opacity: 0,
         delay: 0.6,
         scale: 1,
