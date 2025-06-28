@@ -78,17 +78,17 @@ const Home = () => {
           <div className="text-grayCustom font-text3 mt-2 flex justify-center items-center gap-4 text-sm  lg:text-xl 2xl:text-2xl">
             <span
               ref={lineRef}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[570px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
             EXPOSICIÓN COLECTIVA{" "}
             <span
               ref={lineRef2}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[570px]"
+              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[400px] mt-3 lg:text-base lg:text-balane lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[400px] mt-3 lg:text-base lg:text-balance lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
           >
             Galería en Movimiento nace como el catálogo de la exposición colectiva
             “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
