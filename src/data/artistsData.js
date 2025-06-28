@@ -8,10 +8,10 @@ import imgLau3 from "/artists/laura/03.jpg";
 import imgLau4 from "/artists/laura/04.jpg";
 import imgLau5 from "/artists/laura/05.jpg";
 
-import imgEdu1 from "/artists/edu/02.jpg";
-import imgEdu2 from "/artists/edu/03.jpg";
-import imgEdu3 from "/artists/edu/07.jpg";
-import imgEdu4 from "/artists/edu/10.jpg";
+import imgEdu1 from "/artists/edu/01.jpg";
+import imgEdu2 from "/artists/edu/02.jpg";
+import imgEdu3 from "/artists/edu/03.jpg";
+import imgEdu4 from "/artists/edu/04.jpg";
 
 import imgManu1 from "/artists/manu/01.jpg";
 import imgManu2 from "/artists/manu/02.jpg";
@@ -47,52 +47,52 @@ export const artistsData = [
     obras: [
       {
         image: imgLau1,
-        name: "Lorem Impsum",
+        name: "Jinete I",
         description: {
-          autor: "",
-          titulo: "",
-          tecnica: "",
-          medidas: "",
+          autor: "Laura Aguirre Naretto",
+          titulo: "Jinete I",
+          tecnica: "Litografía sobre papel",
+          medidas: "50 x 35",
         },
       },
       {
         image: imgLau2,
-        name: "",
+        name: "Jinete II",
         description: {
-          autor: "",
-          titulo: "",
-          tecnica: "",
-          medidas: "",
+          autor: "Laura Aguirre Naretto",
+          titulo: "Jinete II",
+          tecnica: "Litografía sobre papel",
+          medidas: "50 x 35",
         },
       },
       {
         image: imgLau3,
-        name: "",
+        name: "Jinete III",
         description: {
-          autor: "",
-          titulo: "",
-          tecnica: "",
-          medidas: "",
+          autor: "Laura Aguirre Naretto",
+          titulo: "Jinete III",
+          tecnica: "Litografía sobre papel",
+          medidas: "50 x 35",
         },
       },
       {
         image: imgLau4,
-        name: "",
+        name: "Jinete IV",
         description: {
-          autor: "",
-          titulo: "",
-          tecnica: "",
-          medidas: "",
+          autor: "Laura Aguirre Naretto",
+          titulo: "Jinete IV",
+          tecnica: "Litografía sobre papel",
+          medidas: "50 x 35",
         },
       },
       {
         image: imgLau5,
-        name: "",
+        name: "Jinete V",
         description: {
-          autor: "",
-          titulo: "",
-          tecnica: "",
-          medidas: "",
+          autor: "Laura Aguirre Naretto",
+          titulo: "Jinete V",
+          tecnica: "Litografía sobre papel",
+          medidas: "50 x 35",
         },
       },
     ],
@@ -117,46 +117,42 @@ export const artistsData = [
     obras: [
       {
         image: imgEdu1,
-        name: "Obra 1",
+        name: "Bombas de Colores",
         description: {
-          detail1: "Lorem impsum",
-          detail2: "Lorem impsum",
-          detail3: "Lorem impsum",
-          detail4: "Lorem impsum",
-          detail5: "Lorem impsum",
+          autor: "Eduardo Perez Hinojosa",
+          titulo: "Bombas de Colores",
+          tecnica: "Óleo y acílico sobre tela",
+          medidas: "70 x 60",
         },
       },
       {
         image: imgEdu2,
-        name: "Obra 2",
+        name: "Tu Caos es tu Calma",
         description: {
-          detail1: "Lorem impsum",
-          detail2: "Lorem impsum",
-          detail3: "Lorem impsum",
-          detail4: "Lorem impsum",
-          detail5: "Lorem impsum",
+          autor: "Eduardo Perez Hinojosa",
+          titulo: "Tu Caos es tu Calma",
+          tecnica: "Óleo y acrílico sobre tela",
+          medidas: "70 x 50",
         },
       },
       {
         image: imgEdu3,
-        name: "Obra 3",
+        name: "No es una pesadilla, es la realidad",
         description: {
-          detail1: "Lorem impsum dolor sit amet",
-          detail2: "Lorem impsum dolor sit amet",
-          detail3: "Lorem impsum",
-          detail4: "Lorem impsum",
-          detail5: "Lorem impsum",
+          autor: "Eduardo Perez Hinojosa",
+          titulo: "No es una pesadilla, es la realidad",
+          tecnica: "Óleo y acrílico sobre tela",
+          medidas: "96 x 120",
         },
       },
       {
         image: imgEdu4,
-        name: "Obra 4",
+        name: "Sagrado Caos",
         description: {
-          detail1: "Lorem impsum dolor sit amet",
-          detail2: "Lorem impsum dolor sit amet",
-          detail3: "Lorem impsum",
-          detail4: "Lorem impsum",
-          detail5: "Lorem impsum",
+          autor: "Eduardo Perez Hinojosa",
+          titulo: "Sagrado Caos",
+          tecnica: "Óleo y acrílico sobre tela",
+          medidas: "100 x 80",
         },
       },
     ],
