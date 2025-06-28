@@ -1,5 +1,6 @@
 import arrow from "/arrow-orange.png";
 import Navbar from "../components/Navbar";
+import BtnPrimary from "../components/BtnPrimary";
 import TsParticlesBg from "../components/TsParticlesBg";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
@@ -93,10 +94,7 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
         </p>
         <div className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative">
           <Link ref={btnRef} to={"/Proyecto"}>
-            <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:text-orangeCustom duration-500 dark:text-stone-400 dark:border-grayCustom group">
-              <span className="group-hover:translate-x-3 duration-300">PROYECTO</span>
-              <img src={arrow} alt="arrow" className="w-6 -rotate-45 group-hover:rotate-0 group-hover:translate-x-3 duration-300" />
-            </button>
+            <BtnPrimary btnName={"Proyecto"} />
           </Link>
         </div>
       </article>
@@ -120,5 +118,5 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
     </section>
   );
 };
- 
+
 export default About;

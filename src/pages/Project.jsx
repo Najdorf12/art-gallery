@@ -1,11 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import TsParticlesBg from "../components/TsParticlesBg";
 import Navbar from "../components/Navbar";
 import arrow from "/arrow-orange.png";
 import { Link } from "react-router-dom";
-/* import About from "../components/About"; */
-/* import WhatWeDo from "../components/WhatWeDo"; */
+import BtnPrimary from "../components/BtnPrimary";
 
 const Project = () => {
   const [activeArticle, setActiveArticle] = useState("project");
@@ -107,16 +106,10 @@ const Project = () => {
                 className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative"
               >
                 <Link to={"/Proyecto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500 dark:text-grayCustom dark:border-grayCustom">
-                    PLANO
-                    <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
-                  </button>
+                  <BtnPrimary btnName={"Sobre Nosotros"} />
                 </Link>
                 <Link to={"/Contacto"}>
-                  <button className="flex font-text2 font-medium justify-center items-center gap-6 text-grayCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-50  dark:border-grayCustom">
-                    CONTACTO
-                    <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
-                  </button>
+                  <BtnPrimary btnName={"Contacto"} />
                 </Link>
               </div>
             </article>
