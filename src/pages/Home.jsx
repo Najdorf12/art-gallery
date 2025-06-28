@@ -67,7 +67,7 @@ const Home = () => {
       <TsParticlesBg />
       <Navbar />
       <ThemeToggle></ThemeToggle>
-      <section className="w-full h-full relative flex flex-col items-center mt-12 lg:mt-20">
+      <section className="w-full h-full relative flex flex-col items-center mt-10 lg:mt-20">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
@@ -88,7 +88,7 @@ const Home = () => {
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[400px] mt-3 lg:text-base lg:text-balance lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[390px] mt-2 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:text-xl dark:text-stone-400"
           >
             Galería en Movimiento nace como el catálogo de la exposición colectiva
             “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full mt-4 lg:mt-12 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full mt-4 md:mt-9 xl:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />

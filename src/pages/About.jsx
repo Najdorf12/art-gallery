@@ -66,7 +66,7 @@ const About = ({ handleButtonClick }) => {
   }, []);
 
   return (
-    <section className="flex flex-col bg-blackCustom h-[100dvh] md:h-screen overflow-hidden relative w-full justify-evenly pt-3 lg:flex-row lg:items-center lg:pl-[5%] dark:bg-whiteCustom">
+    <section className="flex flex-col bg-blackCustom h-[100dvh] md:h-screen overflow-hidden relative w-full justify-between pt-20 lg:pt-0 lg:flex-row lg:items-center lg:pl-[5%] dark:bg-whiteCustom">
       <Navbar />
       <TsParticlesBg />
       <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-20">
@@ -87,10 +87,6 @@ const About = ({ handleButtonClick }) => {
           investigación poética y política arraigada en conceptos como el
           territorio, la tradición y la herencia con foco en el universo visual
           latinoamericano.
-          {/* El propósito principal de este proyecto es promover la visibilidad y comercialización de la obra gráfica y pictórica de cuatro artistas chilenos por el circuito de arte global, tomando España como punto de partida para esta travesía por europa.
-Los artistas convocados para ser parte de esta exposición colectiva son: Laura Aguirre, grabadora litografista; Manu Jorquera, pintor proveniente del Street art; Gonzalo Olivares, artista grafico y Edu Hinojosa, ilustrador, pintor y gestor de este proyecto. Todos activos creadores en la escena contemporánea de arte en Chile.
-Cada uno desarrolla una investigación poética y política arraigada en conceptos como el territorio, la tradición y la herencia con con foco en el universo visual latinoamericano. 
-La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito de exhibición por espacios relevantes dentro de la escena  de vanguardia artistica en España. Estableciendo  una red de colaboración que permita la circulación, despliegue y divulgación de la obra de este grupo de artistas, construyendo una conexión estable entre la obra y el mercado de arte europeo. */}
         </p>
         <div className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative">
           <Link ref={btnRef} to={"/Proyecto"}>
@@ -98,7 +94,7 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
           </Link>
         </div>
       </article>
-      <ul className="flex flex-col gap-1 relative z-50 w-full mt-1 lg:self-end lg:pb-3">
+      <ul className="flex flex-col gap-1 relative z-50 w-full pb-6 lg:self-end lg:pb-3">
         {artistsBtns?.map((artist, i) => (
           <Link key={i} to={`/Artista/${artist?.id}`}>
             <li

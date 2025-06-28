@@ -61,7 +61,7 @@ const Project = () => {
       <div className="w-full z-50 relative flex flex-col px-3 lg:pl-[5%] h-full">
         <div ref={containerRef} className="relative">
           {activeArticle === "project" && (
-            <article className="flex flex-col justify-start items-start relative z-50 w-full cursor-default mt-20 xl:mt-24 2xl:mt-28">
+            <article className="flex flex-col justify-start items-start relative z-50 w-full cursor-default mt-20  2xl:mt-28">
               <h1
                 ref={titleRef}
                 className="font-title leading-[4.8rem] text-orangeCustom text-7xl max-w-[400px] lg:max-w-[600px] lg:leading-[8.1rem] lg:text-[8rem] 2xl:text-[10rem] 2xl:max-w-[800px] 2xl:leading-[10.1rem]"
@@ -92,14 +92,6 @@ const Project = () => {
                 de colaboración que permita la circulación, despliegue y
                 divulgación de la obra de este grupo de artistas, construyendo
                 una conexión estable entre la obra y el mercado de arte europeo.
-                {/*   La propuesta está enfocada en llevar el proyecto “Galería
-                Invisible” a un circuito de exhibición y venta en importantes
-                galerías de arte contemporáneo en España. Buscando así,
-                establecer una red de colaboración que permita la circulación y
-                promoción de este grupo de artistas. Obtener la consolidación de
-                sus trabajos en el medio y lograr una presencia estable en el
-                mercado de arte europeo, promoviendo así su proyección
-                internacional. */}
               </p>
               <div
                 ref={btnRef}
