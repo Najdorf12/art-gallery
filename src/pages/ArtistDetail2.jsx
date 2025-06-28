@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import arrow from "/arrow-orange.png";
+import BtnPrimary from "../components/BtnPrimary";
 import { ReactLenis } from "lenis/react";
 import Slider from "../components/Slider";
 
@@ -35,13 +36,13 @@ const ArtistDetail = ({ artistsData }) => {
       gsap.from(modalRef.current, {
         x: "100%",
         scale: 1,
-        duration: .7,
+        duration: 0.7,
         ease: "power1",
       });
       gsap.from(textRef.current, {
         y: -50,
         opacity: 0,
-        delay: .6,
+        delay: 0.6,
         scale: 1,
         duration: 1,
         ease: "power1",
@@ -49,7 +50,7 @@ const ArtistDetail = ({ artistsData }) => {
       gsap.from(imgRef.current, {
         x: 60,
         opacity: 0,
-        delay: .6,
+        delay: 0.6,
         duration: 1,
         ease: "power1",
       });
@@ -89,12 +90,17 @@ const ArtistDetail = ({ artistsData }) => {
               </h6>
               <p className="text-stone-400 text-sm pr-3 max-w-[600px] text-balance mt-6 md:mt-10 lg:text-base">
                 {artist.description}
-                {artist.description2}
               </p>
               <Link>
-                <button className="flex font-text2 font-medium justify-center items-center gap-6 text-orangeCustom mt-9 border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500">
-                  Visitar sitio
-                  <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
+                <button className="flex font-text2 font-medium justify-center items-center gap-6 text-orangeCustom mt-6 xl:mt-8 border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg duration-500 dark:text-grayCustom dark:border-orangeCustom group cursor-pointer">
+                  <span className="group-hover:translate-x-3 duration-300">
+                    Visitar sitio
+                  </span>
+                  <img
+                    src={arrow}
+                    alt="arrow"
+                    className="w-6 -rotate-45 group-hover:rotate-0 group-hover:translate-x-3 duration-300"
+                  />
                 </button>
               </Link>
             </article>
@@ -109,7 +115,7 @@ const ArtistDetail = ({ artistsData }) => {
         {/* DESCRIPTION3 */}
         <section className="w-full relative py-12 md:py-24 text-stone-300 bg-blackCustom flex justify-end items-center">
           <div className="w-[90%] relative z-50 self-end text-balance text-grayCustom text-sm px-4 lg:pr-32  lg:w-[70%] lg:text-base">
-            {artist.description3}
+            {artist.description2}
           </div>
           <div className="absolute left-0 z-5 bg-whiteCustom w-[5%] h-full lg:w-[25%]"></div>
         </section>
