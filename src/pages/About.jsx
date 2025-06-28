@@ -10,7 +10,7 @@ const artistsBtns = [
   {
     id: "LauraAguirre",
     name: "Laura Aguirre",
-    data1: "Grabadora litografista",
+    data1: "Grabadora Litografista",
   },
   {
     id: "EduHinojosa",
@@ -20,12 +20,12 @@ const artistsBtns = [
   {
     id: "GonzaloOlivares",
     name: "Gonzalo Olivares",
-    data1: "Artista gráfico",
+    data1: "Artista Gráfico",
   },
   {
     id: "ManuJorquera",
     name: "Manu Jorquera",
-    data1: "Pintor (Street art)",
+    data1: "Pintor (Street-Art)",
   },
 ];
 
@@ -93,9 +93,9 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
         </p>
         <div className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative">
           <Link ref={btnRef} to={"/Proyecto"}>
-            <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:scale-105 hover:text-whiteCustom duration-500 dark:text-stone-400 dark:border-grayCustom">
-              PROYECTO
-              <img src={arrow} alt="arrow" className="w-6 -rotate-45" />
+            <button className="flex font-text2 font-medium justify-center items-center gap-6 text-whiteCustom border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg hover:text-orangeCustom duration-500 dark:text-stone-400 dark:border-grayCustom group">
+              <span className="group-hover:translate-x-3 duration-300">PROYECTO</span>
+              <img src={arrow} alt="arrow" className="w-6 -rotate-45 group-hover:rotate-0 group-hover:translate-x-3 duration-300" />
             </button>
           </Link>
         </div>
@@ -105,12 +105,12 @@ La propuesta busca llevar el proyecto “Galería en Movimiento” a un circuito
           <Link key={i} to={`/Artista/${artist?.id}`}>
             <li
               ref={(el) => (artistRef.current[i] = el)}
-              className="flex border-b border-orangeCustom pl-3 pr-2 py-2 max-w-[500px] lg:max-w-[700px] dark:border-grayCustom"
+              className="flex border-b border-orangeCustom pl-3 pr-2 py-2 max-w-[500px] lg:max-w-[700px] dark:border-grayCustom group"
             >
-              <p className="font-title text-whiteCustom text-5xl w-[70%] lg:text-6xl xl:text-8xl 2xl:text-8xl dark:text-orangeCustom">
+              <p className="font-title text-whiteCustom text-5xl w-[70%] lg:text-6xl xl:text-8xl 2xl:text-8xl group-hover:translate-x-12 duration-300 dark:text-orangeCustom">
                 {artist?.name.toLocaleUpperCase()}
               </p>
-              <div className="flex flex-col justify-end text-grayCustom text-sm font-text text-nowrap 2 xl:text-base">
+              <div className="flex flex-col justify-end text-grayCustom text-sm font-text text-nowrap 2 xl:text-base group-hover:text-whiteCustom dark:group-hover:text-blackCustom">
                 {artist?.data1}
               </div>
             </li>
