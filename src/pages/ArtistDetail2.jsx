@@ -164,11 +164,9 @@ const ArtistDetail = ({ artistsData }) => {
                         {selectedImage.name}
                       </h6>
                       <ul className="mt-8 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3 lg:mt-20">
-                        <li>{selectedImage.description.detail1}</li>
-                        <li>{selectedImage.description.detail2}</li>
-                        <li>{selectedImage.description.detail3}</li>
-                        <li>{selectedImage.description.detail4}</li>
-                        <li>{selectedImage.description.detail5}</li>
+                        <li>{selectedImage.description.tecnica}</li>
+                        <li className="font-text3">{selectedImage.description.medidas} cm</li>
+                        <li>{selectedImage.description.autor}</li>
                       </ul>
                     </div>
                   </div>
