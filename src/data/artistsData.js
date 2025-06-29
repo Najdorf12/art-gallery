@@ -1,6 +1,7 @@
 import iconLau from "/icons/icon2.jpeg";
 import iconEdu from "/icons/icon1.jpeg";
-import icon4 from "/icons/icon4.jpeg";
+import iconGonza from "/icons/iconGonza.jpg";
+import iconManu from "/icons/iconManu.jpg";
 
 import imgLau1 from "/artists/laura/01.jpg";
 import imgLau2 from "/artists/laura/02.jpg";
@@ -160,7 +161,7 @@ export const artistsData = [
   },
   {
     id: "ManuJorquera",
-    icon: icon4,
+    icon: iconManu,
     firstname: "Manu",
     lastname: "Jorquera",
     fullName: "Laura Aguirre Naretto",
@@ -226,7 +227,7 @@ export const artistsData = [
   },
   {
     id: "GonzaloOlivares",
-    icon: icon4,
+    icon: iconGonza,
     firstname: "Gonza",
     lastname: "Olivares",
     fullName: "Laura Aguirre Naretto",

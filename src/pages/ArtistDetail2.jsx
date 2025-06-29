@@ -35,9 +35,6 @@ const ArtistDetail = ({ artistsData }) => {
       // Animación de entrada
       gsap.from(modalRef.current, {
         y: "100%",
-        borderTopLeftRadius: "60%",
-        borderTopRightRadius: "60%",
-        scale: 1,
         duration: 0.7,
         ease: "power1",
       });
@@ -112,7 +109,7 @@ const ArtistDetail = ({ artistsData }) => {
             <div className="w-[30%] md:w-[90%] h-[1vh] bg-grayCustom "></div>
             <div className="w-[85%] md:w-full h-[40vh] bg-orangeCustom flex justify-center items-end">
               <p className="font-title text-whiteCustom text-5xl md:text-7xl text-end text-balance pb-6 px-3 md:px-8 xl:pb-7 ">
-                {artist.quote1}
+                "{artist.quote1}"
               </p>
             </div>
           </section>
@@ -149,7 +146,7 @@ const ArtistDetail = ({ artistsData }) => {
 
               <div className="relative max-w-6xl w-full p-1 mt-7 md:mt-0">
                 <article className="p-2">
-                  <div className="flex flex-col lg:flex-row gap-8 md:items-start md:justify-center ">
+                  <div className="flex flex-col lpintere:flex-row gap-8 md:items-start md:justify-center ">
                     <div className="">
                       <img
                         ref={imgRef}
