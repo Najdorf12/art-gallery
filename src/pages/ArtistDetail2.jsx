@@ -107,15 +107,15 @@ const ArtistDetail = ({ artistsData }) => {
           <section className="w-full h-[30vh] md:w-1/2  md:h-screen flex flex-col items-end justify-end">
             <div className="w-[85%] md:w-full h-[40vh] rounded-tl-lg  flex justify-center items-end">
               <p className="font-title text-orangeCustom text-5xl md:text-7xl text-end text-balance pb-6 px-3 md:px-8 xl:pb-7 ">
-                "{artist.quote1}"
+                * {artist.quote1} *
               </p>
             </div>
           </section>
         </section>
 
         {/* DESCRIPTION3 */}
-        <section className="w-full relative py-12 md:py-24 text-stone-300 bg-whiteCustom flex justify-end items-center">
-          <div className="w-[90%] relative z-50 self-end text-balance  text-grayCustom text-sm px-4 lg:pr-32 lg:w-[70%] lg:text-base">
+        <section className="w-full relative py-12 md:py-20 text-stone-300 bg-whiteCustom flex justify-end items-center">
+          <div className="w-[90%] relative z-50 self-end text-balance  text-stone-400 text-sm px-4 lg:pr-32 lg:w-[70%] lg:text-lg">
             {artist.description2}
           </div>
           <div className="absolute left-0 z-5 bg-blackCustom w-[5%] h-full lg:w-[25%]"></div>
