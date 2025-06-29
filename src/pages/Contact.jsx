@@ -25,7 +25,12 @@ const Contact = () => {
       .fromTo(titleRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
       .fromTo(formRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
       .fromTo(subtitleRef.current, { x: -40, opacity: 0 }, { x: 0, opacity: 1 })
-      .fromTo(textRef.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 }, "<");
+      .fromTo(
+        textRef.current,
+        { x: 40, opacity: 0 },
+        { x: 0, opacity: 1 },
+        "<"
+      );
   }, []);
 
   const onSubmit = async (data) => {
@@ -62,7 +67,8 @@ const Contact = () => {
             id="split"
             className="text-8xl text-orangeCustom font-medium font-title md:text-9xl lg:text-[10rem] xl:text-[12rem] 2xl:text-[16rem]"
           >
-            <span className="text-whiteCustom dark:text-grayCustom">C</span>ONTACTO
+            <span className="text-whiteCustom dark:text-grayCustom">C</span>
+            ONTACTO
           </h6>
           <div className="z-50 px-4 font-text2 text-balance max-w-[500px] mt-6 ">
             <div className=" text-start self-start text-lg xl:text-xl 2xl:text-3xl text-stone-400">
@@ -74,8 +80,21 @@ const Contact = () => {
               style={{ animation: "appear 3s ease-out" }}
               className="text-start text-grayCustom text-sm mt-3 md:text-base xl:mt-5 2xl:text-lg 2xl:mt-7"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              mollitia, non cumque vel culpa nesciunt.
+              Para consultas sobre exposiciones, adquisición de obras o
+              colaboraciones institucionales, contáctenos a través de este
+              formulario o directamente a
+              <span className="text-orangeCustom">
+                info@galeriaenmovimiento.com
+              </span>
+              .
+              {/* 
+               - Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona y Berlín. 
+               -Redes de distribución en Europa y América Latina.
+               - Agentes culturales, galerías y coleccionistas: para incluir estas obras en su 
+                circuito artístico o recibir el dossier completo del proyecto, contáctenos. 
+              -   Representación artística disponible para museos, galerías y coleccionistas. 
+                  Horario de contacto: Lunes a Viernes de 10:00 a 18:00 CET.
+  */}
             </p>
           </div>
         </article>
@@ -139,9 +158,8 @@ const Contact = () => {
             id="text-reveal2"
             className="relative z-50 text-grayCustom font-text2 text-center text-balance mt-5 text-sm px-4 lg:text-base lg:mt-7 2xl:text-lg"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            quis temporibus accusantium odit non dicta, optio dolores, ut fugiat
-            autem ipsam maiores quas
+            Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona
+            y Berlín.
           </div>
         </section>
       </section>
