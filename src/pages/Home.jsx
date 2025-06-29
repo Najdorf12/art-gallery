@@ -66,7 +66,7 @@ const Home = () => {
     <main className="relative w-full h-[100dvh] md:h-screen bg-blackCustom dark:bg-whiteCustom lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
       <TsParticlesBg />
       <Navbar />
-      <ThemeToggle></ThemeToggle>
+      <ThemeToggle />
       <section className="w-full h-full relative flex flex-col items-center mt-10 lg:mt-20">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1

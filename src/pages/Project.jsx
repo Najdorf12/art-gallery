@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import TsParticlesBg from "../components/TsParticlesBg";
 import Navbar from "../components/Navbar";
-import arrow from "/arrow-orange.png";
+import ThemeToggle from "../components/ThemeToggle";
 import { Link } from "react-router-dom";
 import BtnPrimary from "../components/BtnPrimary";
 
@@ -58,6 +58,7 @@ const Project = () => {
     <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-50 flex flex-col justify-start overflow-hidden dark:bg-whiteCustom">
       <TsParticlesBg />
       <Navbar />
+      <ThemeToggle />
       <div className="w-full z-50 relative flex flex-col px-3 lg:pl-[5%] h-full">
         <div ref={containerRef} className="relative">
           {activeArticle === "project" && (

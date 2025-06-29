@@ -2,6 +2,7 @@ import arrow from "/arrow-orange.png";
 import Navbar from "../components/Navbar";
 import BtnPrimary from "../components/BtnPrimary";
 import TsParticlesBg from "../components/TsParticlesBg";
+import ThemeToggle from "../components/ThemeToggle";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useLayoutEffect } from "react";
@@ -69,6 +70,7 @@ const About = ({ handleButtonClick }) => {
     <section className="flex flex-col bg-blackCustom h-[100dvh] md:h-screen overflow-hidden relative w-full justify-between pt-20 lg:pt-0 lg:flex-row lg:items-center lg:pl-[5%] dark:bg-whiteCustom">
       <Navbar />
       <TsParticlesBg />
+      <ThemeToggle />
       <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-20">
         <h1
           ref={titleRef}

@@ -83,7 +83,7 @@ const ArtistDetail = ({ artistsData }) => {
         <section className="relative w-full h-screen flex flex-col md:flex-row">
           <section className="w-full h-[70vh] pl-[5%] md:h-[90vh] xl:pl-0 md:w-[55%] bg-whiteCustom flex flex-col items-center justify-center">
             <article>
-              <h6 className="font-title -mt-6 text-8xl md:text-8xl lg:text-[9rem]  xl:text-[12rem] xl:leading-[12rem] text-stone-300">
+              <h6 className="font-title -mt-16 text-8xl md:text-8xl lg:text-[9rem]  xl:text-[12rem] xl:leading-[12rem] text-stone-300">
                 {artist.firstname + " "}{" "}
                 <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
@@ -105,7 +105,7 @@ const ArtistDetail = ({ artistsData }) => {
             </article>
           </section>
 
-          <section className="w-full h-[30dvh] md:w-1/2 md:h-screen flex flex-col items-end justify-end">
+          <section className="w-full h-[30vh] md:w-1/2 md:h-screen flex flex-col items-end justify-end">
             <div className="w-[30%] md:w-[90%] h-[1vh] bg-grayCustom "></div>
             <div className="w-[85%] md:w-full h-[40vh] bg-orangeCustom flex justify-center items-end">
               <p className="font-title text-whiteCustom text-5xl md:text-7xl text-end text-balance pb-6 px-3 md:px-8 xl:pb-7 ">

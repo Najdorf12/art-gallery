@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import TsParticlesBg from "../components/TsParticlesBg";
+import ThemeToggle from "../components/ThemeToggle";
 import Navbar from "../components/Navbar";
 import { gsap } from "gsap";
 import { useRef, useLayoutEffect } from "react";
@@ -61,6 +62,7 @@ const Contact = () => {
       <section className="pt-20 relative h-[100dvh] md:h-screen w-full bg-blackCustom flex flex-col lg:flex-row lg:pt-24 dark:bg-whiteCustom">
         <TsParticlesBg />
         <Navbar />
+        <ThemeToggle />
         <article className="z-50 text-center self-center lg:pl-[9%] lg:text-start lg:w-1/2 lg:self-start ">
           <h6
             ref={titleRef}
@@ -158,8 +160,8 @@ const Contact = () => {
             id="text-reveal2"
             className="relative z-50 text-grayCustom font-text2 text-center text-balance mt-5 text-sm px-4 lg:text-base xl:mt-4  2xl:text-lg"
           >
-             Redes de distribución en Europa y América Latina. <br />
-             Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona
+            Redes de distribución en Europa y América Latina. <br />
+            Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona
             y Berlín.
           </div>
         </section>
