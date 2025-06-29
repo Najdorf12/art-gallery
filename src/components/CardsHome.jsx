@@ -10,7 +10,7 @@ const CardsHome = ({ artist }) => {
           <img
             src={artist?.icon}
             alt="icon"
-            className="w-10 h-10 object-cover object-center rounded-full lg:w-12 lg:h-12 xl:h-14 xl:w-14 2xl:h-16 2xl:w-16 group-hover:scale-110 duration-700 border border-stone-400"
+            className="w-10 h-10 object-cover object-center rounded-full lg:w-12 lg:h-12 xl:h-14 xl:w-14 2xl:h-16 2xl:w-16 group-hover:scale-120 duration-700 border border-stone-400 lg:group-hover:translate-x-[110px] 2xl:group-hover:translate-x-[260px]"
           />
         </figure>
         <article className="text-sm mt-4  md:text-balance lg:text-base xl:mt-5 xl:text-lg 2xl:mt-7  2xl:text-lg">
@@ -22,10 +22,10 @@ const CardsHome = ({ artist }) => {
             {artist?.contentHome}
           </p>
         </article>
+        <figure className="w-6 md:w-7 p-1 absolute bottom-1 -right-2 md:bottom-1 md:-right-2 -rotate-45 group-hover:translate-x-3 group-hover:rotate-0 duration-300">
+          <img src={arrowOrange} alt="" />
+        </figure>
       </div>{" "}
-      <figure className="w-6 md:w-7 p-1 absolute bottom-1 -right-2 md:bottom-1 md:-right-2 -rotate-45">
-        <img src={arrowOrange} alt="" />
-      </figure>
     </Link>
   );
 };
