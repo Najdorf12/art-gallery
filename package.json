@@ -19,7 +19,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.58.1",
-    "react-medium-image-zoom": "^5.2.14",
+    "react-image-zooom": "^1.4.1",
     "react-router-dom": "^7.6.2",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.10"

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import arrowOrange from "/arrow-orange.png";
-import arrow from "/arrow.png";
 
 const CardsHome = ({ artist }) => {
   return (

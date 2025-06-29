@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import arrow from "/arrow-orange.png";
-import ThemeToggle from "../components/ThemeToggle";
+import ImageZoom from "react-image-zooom";
 import { ReactLenis } from "lenis/react";
 import Slider from "../components/Slider";
 
@@ -144,34 +144,27 @@ const ArtistDetail = ({ artistsData }) => {
 
               <div className="relative max-w-6xl w-full p-1 mt-7 md:mt-0">
                 <article className="p-2">
-                  <div className="flex flex-col lg:flex-row gap-8 md:items-start md:justify-center ">
+                  <div className="flex justify-center items-center">
                     <div className="">
-                      <img
-                        ref={imgRef}
-                        src={selectedImage.image}
-                        alt={selectedImage.name}
-                        className="w-full object-contain h-auto max-h-[470px] md:h-auto md:max-h-[680px] md:min-w-[600px] lg:min-w-[700px] rounded-sm"
+                      <ImageZoom
+                        src={selectedImage?.image}
+                        alt="obra-img"
+                        zoom="200"
+                        className="max-w-[900px] rounded-lg"
                       />
-                    </div>
-                    <div
-                      ref={textRef}
-                      className="pl-1 md:pl-12 md:pt-32 relative"
-                    >
-                      {/*  <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
-                      <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div> */}
-                      <h6 className="text-6xl leading-10 font-title text-whiteCustom md:leading-24 md:text-8xl ">
-                        {selectedImage.name}
-                      </h6>
-                      <ul className="mt-8 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
-                        <li>{selectedImage.description.tecnica}</li>
-                        <li className="font-text3">
-                          {selectedImage.description.medidas} cm
-                        </li>
-                        <li>{selectedImage.description.autor}</li>
-                      </ul>
                     </div>
                   </div>
                 </article>
+              </div>
+              <div className="text-6xl max-w-[500px] text-balance leading-10 font-title text-whiteCustom md:leading-24  md:text-8xl absolute top-12 left-0">
+                {selectedImage.name}
+                <ul className="mt-8 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
+                  <li>{selectedImage.description.tecnica}</li>
+                  <li className="font-text3">
+                    {selectedImage.description.medidas} cm
+                  </li>
+                  <li>{selectedImage.description.autor}</li>
+                </ul>
               </div>
             </div>
           )}
