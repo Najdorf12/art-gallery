@@ -106,7 +106,7 @@ export const artistsData = [
     firstname: "Edu",
     lastname: "Hinojosa",
     fullName: "Eduardo Hinojosa",
-    contentHome: "Ilustrador - Pintor",
+    contentHome: "Ilustrador / Pintor",
     email: "edophinojosa@gmail.com",
     phone: "+56978357440",
     description: `Eduardo Perez Hinojosa (Edu Hinojosa) es licenciado en Artes (UPLA) y diseñador escénico con amplia experiencia en escenógrafia y montaje de arte. Desde el año 2016 ha trabajado en diseño escénico, instalación y performance para diversos proyectos con artistas de Chile, Argentina, México, Rumania, Francia, Italia y España.`,
@@ -165,7 +165,7 @@ export const artistsData = [
     firstname: "Manu",
     lastname: "Jorquera",
     fullName: "Manuel Jorquera",
-    contentHome: "Pintor (Street-Art)",
+    contentHome: "Pintor / Street-Art",
     description: `Se formó como grabador en la Escuela Nacional de Bellas Artes de Viña del Mar, y posteriormente continuó su desarrollo artístico de manera autodidacta. Desde muy temprana edad se vinculó al Graffiti y al Street Art, estilos urbanos que influyeron profundamente en su obra, aportando una estética vibrante, fluida y contemporánea, que se ha convertido en su sello personal.`,
     description2:
       "Como artista, Jorquera ha desarrollado un imaginario visual que rescata y resignifica símbolos de la cultura popular mestiza chilena y latinoamericana, tales como la gente común, el gallo —ícono de fuerza y rebeldía—, y elementos de la religiosidad cristiana popular, en los que se mezcla lo sagrado y lo cotidiano.",
@@ -231,7 +231,7 @@ export const artistsData = [
     firstname: "Gonza",
     lastname: "Olivares",
     fullName: "Gonzalo Olivares",
-    contentHome: "Artista Grafico",
+    contentHome: "Artista Gráfico",
     description: `Diseñador gráfico desde el año 2008. Desde el 2012, fundador junto a la compañía Teatro Turba, de la editorial Corazón de Hueso. Algunos de sus trabajos realizados son piezas gráficas para las obras teatrales y literarias:  Papá Noel Mamá Tampoco, Dubois Santo Asesino, La Táctica del Avestruz, Rodeo’s, Las Trajedias se las dejamos a Shakespeare, Las Estaciones de Eva, Dubois Vive y para el Cómic “El Color Secreto”.`,
     description2:
       "Desde el collage ha generado publicaciones tipo fanzines como “Piedra” o “Salbutamol”, ambos ejemplares donde utiliza la técnica del recorte para ilustrar y presentar obras en formato reducido.Ha realizado talleres de gráfica y serigrafía abiertos en la vía pública para niñas y niños de poblaciones de Valparaíso y La Calera, además de crear espacios de trabajo en torno a la gráfica en centros cerrados del SENAME, (Servicio Nacional de Menores), organismo gubernamental chileno, encargado de la protección de derechos de niños, niñas y adolescentes, de entre 14 y 17 vulnerados en sus derechos o que han infringido la ley.",
