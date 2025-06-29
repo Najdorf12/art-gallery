@@ -78,12 +78,12 @@ const Contact = () => {
             <p
               ref={subtitleRef}
               style={{ animation: "appear 3s ease-out" }}
-              className="text-start text-grayCustom text-sm mt-3 md:text-base xl:mt-5 2xl:text-lg 2xl:mt-7"
+              className="text-start text-grayCustom text-sm mt-3 md:text-base lg:mt-5 xl:mt-6 2xl:text-lg 2xl:mt-7"
             >
               Para consultas sobre exposiciones, adquisición de obras o
               colaboraciones institucionales, contáctenos a través de este
               formulario o directamente a
-              <span className="text-orangeCustom">
+              <span className="text-orangeCustom pl-1">
                 info@galeriaenmovimiento.com
               </span>
               .
@@ -156,9 +156,10 @@ const Contact = () => {
           <div
             ref={textRef}
             id="text-reveal2"
-            className="relative z-50 text-grayCustom font-text2 text-center text-balance mt-5 text-sm px-4 lg:text-base lg:mt-7 2xl:text-lg"
+            className="relative z-50 text-grayCustom font-text2 text-center text-balance mt-5 text-sm px-4 lg:text-base xl:mt-4  2xl:text-lg"
           >
-            Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona
+             Redes de distribución en Europa y América Latina. <br />
+             Oficina de gestión: Madrid | Representantes en Valparaíso, Barcelona
             y Berlín.
           </div>
         </section>
