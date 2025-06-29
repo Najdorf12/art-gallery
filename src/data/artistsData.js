@@ -38,7 +38,8 @@ export const artistsData = [
     email: "laura.en.obra@gmail.com",
     phone: "+56988479123",
     description: `Licenciada en Arte en la PUCV, grabadora y artista textil.
-    Actualmente estudia Arquitectura en la misma universidad, buscando nuevas escalas espaciales.`,
+    Actualmente estudia Arquitectura en la misma universidad, buscando nuevas escalas espaciales.
+    Cada pieza es un encuentro entre lo íntimo y lo colectivo, un diálogo donde la imagen se construye y deconstruye, como una memoria que se transforma con el tiempo.`,
     description2: `Laura desarrolla su quehacer artístico en torno a diversas técnicas de grabado tradicional, de una factura impecable, combina gestos de apariencia espontanea con un cuidado único en la composición y su estructura  donde el gesto y la materia dialogan para ser parte de su proceso de obra: pliegues y despliegues que transforman la imagen en un acto vivo.
     Cada pieza es un encuentro entre lo íntimo y lo colectivo, un diálogo donde la imagen se construye y deconstruye, como una memoria que se transforma con el tiempo. El grabado es territorio fértil para explorar las tensiones entre lo controlado y lo espontáneo, permitiendo que el gesto se funda con la técnica y emerja como presencia.`,
     quote1: `Cada pieza es un encuentro entre lo íntimo y lo colectivo`,
@@ -226,7 +227,7 @@ export const artistsData = [
   {
     id: "GonzaloOlivares",
     icon: icon4,
-    firstname: "Gonzalo",
+    firstname: "Gonza",
     lastname: "Olivares",
     fullName: "Laura Aguirre Naretto",
     contentHome: "Lorem ipsum dolor sit",
