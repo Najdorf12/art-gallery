@@ -231,7 +231,7 @@ export const artistsData = [
     firstname: "Gonza",
     lastname: "Olivares",
     fullName: "Gonzalo Olivares",
-    contentHome: "ArtistaGrafico",
+    contentHome: "Artista Grafico",
     description: `Diseñador gráfico desde el año 2008. Desde el 2012, fundador junto a la compañía Teatro Turba, de la editorial Corazón de Hueso. Algunos de sus trabajos realizados son piezas gráficas para las obras teatrales y literarias:  Papá Noel Mamá Tampoco, Dubois Santo Asesino, La Táctica del Avestruz, Rodeo’s, Las Trajedias se las dejamos a Shakespeare, Las Estaciones de Eva, Dubois Vive y para el Cómic “El Color Secreto”.`,
     description2:
       "Desde el collage ha generado publicaciones tipo fanzines como “Piedra” o “Salbutamol”, ambos ejemplares donde utiliza la técnica del recorte para ilustrar y presentar obras en formato reducido.Ha realizado talleres de gráfica y serigrafía abiertos en la vía pública para niñas y niños de poblaciones de Valparaíso y La Calera, además de crear espacios de trabajo en torno a la gráfica en centros cerrados del SENAME, (Servicio Nacional de Menores), organismo gubernamental chileno, encargado de la protección de derechos de niños, niñas y adolescentes, de entre 14 y 17 vulnerados en sus derechos o que han infringido la ley.",
