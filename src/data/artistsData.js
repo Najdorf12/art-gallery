@@ -112,7 +112,7 @@ export const artistsData = [
    Actualmente, se desempeña como montajista de arte y museografía para distintas galerías, museos y salas de arte en Chile, destacándose como montajista del Festival  Internacional de Fotografía de Valparaíso (FIFV) desde el año 2018 a la fecha y siendo parte del equipo de montaje FAGNES en la realización de la "XII Bienal de Artes Internacional de Valparaíso, 2024" uno de los eventos de arte contemporáneo más importantes del país. 
    Su obra pictórica toma elementos de la tradición académica del óleo, sumando gestos de contemporaneidad por medio de la  mixtura de técnicas, recursos graficos y la incorporacion de materiales como: tintas, acrílicos y pinturas sintéticas. 
    Sus recursos narrativos y poéticos entrelazan  indígenas latinoamericanos con elementos propios de la cultura actual de consumo, elaborando un discurso crítico en torno al vinculo dado entre “desarrollo” y capitalismo.`,
-    quote1: `Es un dialogo irreverente entre primitivismo y modernidad.`,
+    quote1: `Es un dialogo irreverente entre primitivismo y modernidad`,
     quote2: `Busco representar un sincretismo de imaginarios latinoamericanos habitando un mundo contemporáneo`,
     obras: [
       {

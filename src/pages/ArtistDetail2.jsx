@@ -109,8 +109,12 @@ const ArtistDetail = ({ artistsData }) => {
           </section>
 
           <section className="w-full h-[40dvh] md:w-1/2 md:h-screen flex flex-col items-end justify-end">
-            <div className="w-[30%] md:w-[90%] h-[1dvh] bg-grayCustom "></div>
-            <div className="w-[50%] md:w-full h-[50dvh] bg-orangeCustom "></div>
+            <div className="w-[30%] md:w-[90vh] h-[1vh] bg-grayCustom "></div>
+            <div className="w-[85%] md:w-full h-[40vh] bg-orangeCustom flex justify-center items-center">
+              <p className="font-title text-whiteCustom text-5xl md:text-7xl text-end px-12 text-balancee">
+                {artist.quote1}
+              </p>
+            </div>
           </section>
         </section>
 
@@ -158,9 +162,9 @@ const ArtistDetail = ({ artistsData }) => {
                       ref={textRef}
                       className="pl-1 md:pl-12 md:pt-32 relative"
                     >
-                      <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
-                      <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div>
-                      <h6 className="text-6xl leading-10 font-title text-whiteCustom md:text-8xl xl:text-9xl">
+                     {/*  <div className="w-[100%] h-[1px] bg-orangeCustom absolute -bottom-2 md:-bottom-9"></div>
+                      <div className="w-[30%] h-[1px] bg-orangeCustom absolute -top-5 md:top-12"></div> */}
+                      <h6 className="text-6xl leading-10 font-title text-whiteCustom md:leading-24 md:text-8xl xl:leading-32 text-balance xl:text-9xl">
                         {selectedImage.name}
                       </h6>
                       <ul className="mt-8 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3 lg:mt-20">
@@ -176,16 +180,7 @@ const ArtistDetail = ({ artistsData }) => {
           )}
         </section>
 
-        {/*    <section className="flex items-center justify-center relative">
-            <div className="absolute bottom-2 right-2 flex items-center gap-12 lg:right-24">
-              <figure className="w-6 md:w-12 ">
-                <img className="w-full h-full rotate-180" src={arrow} alt="" />
-              </figure>
-              <figure className="w-6 md:w-12 ">
-                <img className="w-full h-full" src={arrow} alt="" />
-              </figure>
-          </div>
-        </section> */}
+    
       </section>
     </>
   );
