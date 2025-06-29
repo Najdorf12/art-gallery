@@ -146,7 +146,7 @@ const ArtistDetail = ({ artistsData }) => {
 
               <div className="relative max-w-6xl w-full p-1 mt-7 md:mt-0">
                 <article className="p-2">
-                  <div className="flex flex-col lpintere:flex-row gap-8 md:items-start md:justify-center ">
+                  <div className="flex flex-col lg:flex-row gap-8 md:items-start md:justify-center ">
                     <div className="">
                       <img
                         ref={imgRef}
