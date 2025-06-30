@@ -90,7 +90,7 @@ const About = ({ handleButtonClick }) => {
           territorio, la tradición y la herencia con foco en el universo visual
           latinoamericano.
         </p>
-        <div className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative">
+        <div className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative 2xl:mt-12">
           <Link ref={btnRef} to={"/Proyecto"}>
             <BtnPrimary btnName={"Proyecto"} />
           </Link>
