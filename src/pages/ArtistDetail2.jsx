@@ -142,8 +142,8 @@ const ArtistDetail = ({ artistsData }) => {
                 ×
               </button>
 
-              <div className="relative max-w-6xl w-full pt-10">
-                <div className="flex justify-center items-center">
+              <div className="relative max-w-6xl w-full pt-10  flex flex-col gap-4">
+                <div ref={imgRef} className="flex justify-center items-center">
                   <ImageZoom
                     src={selectedImage?.image}
                     alt="obra-img"
@@ -151,11 +151,11 @@ const ArtistDetail = ({ artistsData }) => {
                     className="max-w-[900px] rounded-lg max-h-[70vh]"
                   />
                 </div>
-                <div className="">
-                  <p className=" max-w-[500px] text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
+                <div ref={textRef} className="text-end pr-3">
+                  <p className="max-w-[500px]  text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
                     {selectedImage.name}
                   </p>
-                  <ul className="mt-8 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
+                  <ul className="mt-4 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
                     <li>{selectedImage.description.tecnica}</li>
                     <li className="font-text3">
                       {selectedImage.description.medidas} cm
