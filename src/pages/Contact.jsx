@@ -59,7 +59,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="pt-20 relative h-[100dvh] md:h-screen w-full bg-blackCustom flex flex-col lg:flex-row lg:pt-24 dark:bg-whiteCustom">
+      <section className="pt-20 relative h-[100dvh] md:h-screen w-full bg-blackCustom flex flex-col lg:flex-row lg:pt-24 dark:bg-whiteCustom 2xl:pt-28">
         <TsParticlesBg />
         <Navbar />
         <ThemeToggle />
@@ -72,15 +72,15 @@ const Contact = () => {
             <span className="text-whiteCustom dark:text-grayCustom">C</span>
             ONTACTO
           </h6>
-          <div className="z-50 px-4 font-text2 text-balance max-w-[500px] mt-6 ">
+          <div className="z-50 px-4 font-text2 text-balance max-w-[500px] mt-6 2xl:mt-8">
             <div className=" text-start self-start text-lg xl:text-xl 2xl:text-3xl text-stone-400">
               HABLEMOS AHORA
             </div>
-            <div className="bg-orangeCustom w-44 h-[1px] z-50 relative mt-1 xl:w-[430px] 2xl:w-40"></div>
+            <div className="bg-orangeCustom w-44 h-[1px] z-50 relative mt-1 xl:w-[430px] 2xl:mt-2  2xl:w-[300px]"></div>
             <p
               ref={subtitleRef}
               style={{ animation: "appear 3s ease-out" }}
-              className="text-start text-grayCustom text-sm mt-3 md:text-base lg:mt-5 xl:mt-6 2xl:text-lg 2xl:mt-7"
+              className="text-start text-grayCustom text-sm mt-3 md:text-base lg:mt-5 xl:mt-6 2xl:text-lg 2xl:mt-7 2xl:w-[700px]"
             >
               Para consultas sobre exposiciones, adquisición de obras o
               colaboraciones institucionales, contáctenos a través de este
@@ -101,17 +101,17 @@ const Contact = () => {
           </div>
         </article>
 
-        <section className="w-full flex flex-col justify-center items-center mt-5 font-text2 relative z-50 lg:w-1/2 lg:self-end lg:pb-20 lg:pr-24">
+        <section className="w-full flex flex-col justify-center items-center mt-5 font-text2 relative z-50 lg:w-1/2 lg:self-end lg:pb-20 lg:pr-24 2xl:self-center 2xl:mt-[20%]">
           <div
             style={{ animation: "slideInFromLeft 1s ease-out" }}
-            className="w-full relative rounded-md  overflow-hidden flex flex-col px-5 max-w-[500px]"
+            className="w-full relative rounded-md  overflow-hidden flex flex-col px-5 max-w-[500px] 2xl:max-w-[600px]"
           >
             <form
               ref={formRef}
               onSubmit={handleSubmit(onSubmit)}
               method="POST"
               action="#"
-              className="py-8 font-text  flex flex-col gap-7 xl:gap-8 2xl:gap-9"
+              className="py-8 font-text flex flex-col gap-7 xl:gap-8 2xl:gap-12 2xl:text-lg"
             >
               <div className="relative">
                 <input

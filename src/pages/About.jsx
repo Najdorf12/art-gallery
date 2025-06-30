@@ -71,7 +71,7 @@ const About = ({ handleButtonClick }) => {
       <Navbar />
       <TsParticlesBg />
       <ThemeToggle />
-      <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-20">
+      <article className="cursor-default flex flex-col justify-start items-start relative z-50 w-full px-4 lg:max-w-[60%] lg:self-start lg:mt-20 2xl:mt-32">
         <h1
           ref={titleRef}
           className="font-title leading-none text-orangeCustom text-7xl lg:text-[8rem] xl:text-[10rem] 2xl:text-[12rem]"
@@ -96,17 +96,17 @@ const About = ({ handleButtonClick }) => {
           </Link>
         </div>
       </article>
-      <ul className="flex flex-col gap-1 relative z-50 w-full pb-6 lg:self-end lg:pb-3">
+      <ul className="flex flex-col gap-1 relative max-w-[500px] self-end z-50 w-full pb-6 lg:pb-3 lg:max-w-[700px] 2xl:max-w-[900px]">
         {artistsBtns?.map((artist, i) => (
           <Link key={i} to={`/Artista/${artist?.id}`}>
             <li
               ref={(el) => (artistRef.current[i] = el)}
-              className="flex border-b border-orangeCustom pl-3 pr-2 py-2 max-w-[500px] lg:max-w-[700px] dark:border-grayCustom group"
+              className="flex border-b border-orangeCustom pl-3 pr-2 py-2 dark:border-grayCustom group"
             >
-              <p className="font-title text-whiteCustom text-5xl w-[70%] lg:text-6xl xl:text-8xl 2xl:text-8xl group-hover:translate-x-12 duration-300 dark:text-orangeCustom">
+              <p className="font-title text-whiteCustom text-5xl w-[70%] lg:text-6xl xl:text-8xl 2xl:text-9xl group-hover:translate-x-12 duration-300 dark:text-orangeCustom">
                 {artist?.name.toLocaleUpperCase()}
               </p>
-              <div className="flex flex-col justify-end text-grayCustom text-sm font-text text-nowrap 2 xl:text-base group-hover:text-whiteCustom dark:group-hover:text-blackCustom">
+              <div className="flex flex-col justify-end text-grayCustom text-sm font-text text-nowrap xl:text-base 2xl:text-lg group-hover:text-whiteCustom dark:group-hover:text-blackCustom 2xl:pl-3">
                 {artist?.data1}
               </div>
             </li>
