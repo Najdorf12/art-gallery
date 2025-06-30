@@ -96,7 +96,7 @@ const Project = () => {
               </p>
               <div
                 ref={btnRef}
-                className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative"
+                className="flex justify-start items-center gap-9 mt-9 lg:gap-10 z-50 relative 2xl:gap-16"
               >
                 <Link to={"/Proyecto"}>
                   <BtnPrimary btnName={"Sobre Nosotros"} />
