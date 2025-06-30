@@ -62,3 +62,10 @@
   height: auto;
 }
 
+@media(min-width : 1000px){
+  #imageZoom {
+  max-width: 900px;
+  max-height: 90vh;
+}
+ 
+}
