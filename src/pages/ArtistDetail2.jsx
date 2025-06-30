@@ -142,13 +142,13 @@ const ArtistDetail = ({ artistsData }) => {
                 ×
               </button>
 
-              <div className="relative max-w-6xl w-full ">
+              <div className="relative max-w-6xl w-full pt-10">
                 <div className="flex justify-center items-center">
                   <ImageZoom
                     src={selectedImage?.image}
                     alt="obra-img"
                     zoom="300"
-                    className="max-w-[900px] rounded-lg"
+                    className="max-w-[900px] rounded-lg max-h-[70vh]"
                   />
                 </div>
                 <div className="">
