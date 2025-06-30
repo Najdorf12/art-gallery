@@ -133,7 +133,7 @@ const ArtistDetail = ({ artistsData }) => {
           {showModal && selectedImage && (
             <section
               ref={modalRef}
-              className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-whiteCustom px-3 scroll"
+              className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-whiteCustom px-2 overflow-hidden"
             >
               <button
                 onClick={closeModal}
@@ -142,8 +142,8 @@ const ArtistDetail = ({ artistsData }) => {
                 ×
               </button>
 
-              <div className="relative max-w-6xl w-full pt-10  flex flex-col gap-4 lg:flex-row lg:pt-4 lg:gap-0 lg:items-center lg:justify-center ">
-                <div ref={imgRef} className="flex justify-center items-center">
+              <div className="relative w-full pt-10  flex flex-col gap-4 lg:flex-row lg:pt-4 lg:pl-[12%] lg:gap-10 lg:items-center lg:justify-center ">
+                <div ref={imgRef} className="flex justify-center items-center ">
                   <ImageZoom
                     src={selectedImage?.image}
                     alt="obra-img"
@@ -151,8 +151,8 @@ const ArtistDetail = ({ artistsData }) => {
                     className="max-w-[900px] rounded-lg"
                   />
                 </div>
-                <div ref={textRef} className="text-end pr-3 lg:text-start lg:absolute lg:-right-12 bottom-6">
-                  <p className="max-w-[400px] text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
+                <div ref={textRef} className="text-end pr-3 lg:text-start max-w-[400px]">
+                  <p className="text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
                     {selectedImage.name}
                   </p>
                   <ul className="mt-4 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
