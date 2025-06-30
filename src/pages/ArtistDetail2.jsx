@@ -131,9 +131,9 @@ const ArtistDetail = ({ artistsData }) => {
           </div>
 
           {showModal && selectedImage && (
-            <div
+            <section
               ref={modalRef}
-              className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-blackCustom px-3"
+              className="fixed inset-0 z-[500] h-screen flex items-center justify-center bg-whiteCustom px-3"
             >
               <button
                 onClick={closeModal}
@@ -142,31 +142,29 @@ const ArtistDetail = ({ artistsData }) => {
                 ×
               </button>
 
-              <div className="relative max-w-6xl w-full p-1 mt-7 md:mt-0">
-                <article className="p-2">
-                  <div className="flex justify-center items-center">
-                    <div className="">
-                      <ImageZoom
-                        src={selectedImage?.image}
-                        alt="obra-img"
-                        zoom="300"
-                        className="max-w-[900px] rounded-lg"
-                      />
-                    </div>
-                  </div>
-                </article>
+              <div className="relative max-w-6xl w-full ">
+                <div className="flex justify-center items-center">
+                  <ImageZoom
+                    src={selectedImage?.image}
+                    alt="obra-img"
+                    zoom="300"
+                    className="max-w-[900px] rounded-lg"
+                  />
+                </div>
+                <div className="">
+                  <p className=" max-w-[500px] text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
+                    {selectedImage.name}
+                  </p>
+                  <ul className="mt-8 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
+                    <li>{selectedImage.description.tecnica}</li>
+                    <li className="font-text3">
+                      {selectedImage.description.medidas} cm
+                    </li>
+                    <li>{selectedImage.description.autor}</li>
+                  </ul>
+                </div>
               </div>
-              <div className="text-6xl max-w-[500px] text-balance leading-10 font-title text-whiteCustom md:leading-24  md:text-8xl absolute top-12 left-0">
-                {selectedImage.name}
-                <ul className="mt-8 font-text2 flex flex-col gap-2 text-stone-500 text-sm md:text-base md:mt-16 md:gap-3">
-                  <li>{selectedImage.description.tecnica}</li>
-                  <li className="font-text3">
-                    {selectedImage.description.medidas} cm
-                  </li>
-                  <li>{selectedImage.description.autor}</li>
-                </ul>
-              </div>
-            </div>
+            </section>
           )}
         </section>
       </section>
