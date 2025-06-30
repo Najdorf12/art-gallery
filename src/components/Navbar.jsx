@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="absolute top-0 z-[200] w-full flex justify-start items-center lg:justify-end pt-2 overflow-hidden lg:pt-3">
-      <ul className=" w-full flex flex-row justify-center items-center gap-5 font-text2 text-grayCustom text-sm lg:gap-10 lg:text-lg xl:gap-14 ">
+    <nav className="absolute top-0 z-[200] w-full flex justify-start items-center lg:justify-end pt-2 overflow-hidden lg:pt-3 2xl:pt-5">
+      <ul className=" w-full flex flex-row justify-center items-center gap-5 font-text2 text-grayCustom text-sm lg:gap-10 lg:text-lg xl:gap-14 2xl:text-xl 2xl:gap-20">
         <Link to={"/"}>
           <li className="hover:text-whiteCustom dark:hover:text-stone-400 duration-700 cursor-pointer hover:scale-110">
             Inicio

@@ -6,7 +6,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-full focus:outline-none z-[690] absolute top-1.5 right-1.5 text-orangeCustom text-xl lg:text-2xl md:top-3 md:right-7"
+      className="rounded-full focus:outline-none z-[690] absolute top-1.5 right-1.5 text-orangeCustom text-xl lg:text-2xl md:top-3 md:right-7 2xl:text-3xl 2xl:top-5"
       aria-label={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
     >
       {theme === "light" ? (
