@@ -106,7 +106,7 @@ const ArtistDetail = ({ artistsData }) => {
 
           <section className="w-full h-[30vh] md:w-1/2  md:h-screen flex flex-col items-end justify-end">
             <div className="w-[85%] md:w-full h-[40vh] rounded-tl-lg  flex justify-center items-end">
-              <p className="font-title text-orangeCustom text-5xl md:text-7xl text-end text-balance pb-6 px-3 md:px-8 xl:pb-7 ">
+              <p className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl text-end text-balance pb-8 px-3 md:px-8 xl:pb-7 ">
                 * {artist.quote1} *
               </p>
             </div>
