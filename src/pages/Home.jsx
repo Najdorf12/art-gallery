@@ -88,7 +88,7 @@ const Home = () => {
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-3 max-w-[390px] mt-2 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:mt-5 2xl:text-xl dark:text-stone-400"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-1 sm:px-3 max-w-[390px] mt-2 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:mt-5 2xl:text-xl dark:text-stone-400"
           >
             Galería en Movimiento nace como el catálogo de la exposición colectiva
             “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
