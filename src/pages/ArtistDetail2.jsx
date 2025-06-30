@@ -149,7 +149,7 @@ const ArtistDetail = ({ artistsData }) => {
                       <ImageZoom
                         src={selectedImage?.image}
                         alt="obra-img"
-                        zoom="200"
+                        zoom="300"
                         className="max-w-[900px] rounded-lg"
                       />
                     </div>
