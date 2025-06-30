@@ -67,11 +67,11 @@ const Home = () => {
       <TsParticlesBg />
       <Navbar />
       <ThemeToggle />
-      <section className="w-full h-full relative flex flex-col items-center mt-10 lg:mt-20 2xl:mt-28">
+      <section className="w-full h-full relative flex flex-col items-center mt-12 lg:mt-20 2xl:mt-28">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[7rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[6rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
           >
             GALERIA EN MOVIMIENTO
           </h1>
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-5 w-full mt-4 md:mt-9 xl:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-3 md:mt-9 xl:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />
