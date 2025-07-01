@@ -82,15 +82,15 @@ const ArtistDetail = ({ artistsData }) => {
         <section className="relative w-full h-screen flex flex-col md:flex-row">
           <section className="w-full h-[70vh] pl-[5%] md:h-screen xl:pl-0 md:w-[55%] bg-whiteCustom  flex flex-col items-center justify-center">
             <article className="">
-              <h6 className="font-title -mt-16 text-8xl md:text-8xl lg:text-[9rem]  xl:text-[12rem] xl:leading-[12rem] text-stone-300">
+              <h6 className="font-title -mt-16 text-8xl md:text-8xl lg:text-[9rem] xl:text-[12rem] xl:leading-[12rem] text-stone-300 2xl:text-[14rem] 2xl:leading-[14rem]">
                 {artist.firstname + " "}{" "}
                 <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
-              <p className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base">
+              <p  className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base 2xl:text-lg">
                 {artist.description}
               </p>
               <Link>
-                <button className="flex font-text2 font-medium justify-center items-center gap-6 text-orangeCustom mt-6 xl:mt-8 border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg duration-500 dark:text-grayCustom dark:border-orangeCustom group cursor-pointer">
+                <button className="flex font-text2 font-medium justify-center items-center gap-6 text-orangeCustom mt-6 xl:mt-8 border-b border-orangeCustom pb-[2px] pl-[2px] lg:text-lg duration-500 dark:text-grayCustom dark:border-orangeCustom group cursor-pointer 2xl:text-xl 2xl:mt-9">
                   <span className="group-hover:translate-x-3 duration-300">
                     Visitar sitio
                   </span>
@@ -106,7 +106,7 @@ const ArtistDetail = ({ artistsData }) => {
 
           <section className="w-full h-[30vh] md:w-1/2  md:h-screen flex flex-col items-end justify-end">
             <div className="w-[85%] md:w-full h-[40vh] rounded-tl-lg  flex justify-center items-end">
-              <p className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl md:leading-[4.8rem] text-end text-balance pb-8 px-3 md:px-8 xl:pb-7 ">
+              <p /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl md:leading-[4.8rem] text-end text-balance pb-8 px-3 md:px-8 xl:pb-9 2xl:text-[5.6rem] 2xl:leading-[5.7rem] ">
                 * {artist.quote1} *
               </p>
             </div>
@@ -120,10 +120,10 @@ const ArtistDetail = ({ artistsData }) => {
           </div>
           <div className="absolute left-0 z-5 bg-blackCustom w-[15%] h-full lg:w-[25%]"></div>
         </section>
-
+      
         {/* Images Section */}
-        <section className="w-full relative flex items-center justify-center mt-16">
-          <div className="lg:h-[95vh]">
+        <section className="w-full relative flex items-center justify-center mt-12 lg:mt-28">
+          <div className="lg:h-[100vh]">
             <Slider
               obras={artist?.obras}
               handleSelectedImage={handleSelectedImage}
@@ -151,7 +151,10 @@ const ArtistDetail = ({ artistsData }) => {
                     className="max-w-[900px] rounded-lg"
                   />
                 </div>
-                <div ref={textRef} className="text-end pr-3 lg:text-start max-w-[400px]">
+                <div
+                  ref={textRef}
+                  className="text-end pr-3 lg:text-start max-w-[400px]"
+                >
                   <p className="text-balance font-title text-grayCustom text-6xl leading-16 md:leading-24 md:text-8xl">
                     {selectedImage.name}
                   </p>
@@ -166,6 +169,13 @@ const ArtistDetail = ({ artistsData }) => {
               </div>
             </section>
           )}
+        </section>
+        <section className="w-[80vw]  pl-5 xl:px-24 xl:pb-12 bg-blackCustom pt-12">
+          <div className=" md:w-full rounded-tl-lg ">
+            <p /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.1rem] md:text-7xl md:leading-[4.8rem] text-balance xl:text-7xl xl:leading-20 ">
+              * {artist.quote2} *
+            </p>
+          </div>
         </section>
       </section>
     </>

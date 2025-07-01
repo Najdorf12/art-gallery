@@ -7,7 +7,6 @@
   width: 100%;
   animation: slidein 1200s forwards infinite alternate;
 }
-
 @keyframes slidein {
   0%,
   100% {
@@ -19,12 +18,10 @@
     background-size: 2400px;
   }
 }
-
 .swiper {
   width: 100%;
   padding: 40px 0 100px;
 }
-
 .swiper-slide {
   position: relative;
   max-width: 380px;
@@ -32,7 +29,6 @@
   aspect-ratio: 1/1;
   border-radius: 3px;
 }
-
 .swiper-slide img {
   object-fit: cover;
   width: 100%;
@@ -41,7 +37,6 @@
   pointer-events: none;
   user-select: none;
 }
-
 .swiper-slide-active .overlay {
   display: flex;
   align-items: center;
@@ -55,40 +50,31 @@
   opacity: 0;
   transition: all 12s linear;
 }
-
 .swiper-slide:hover .overlay {
   opacity: 1;
 }
-
 .swiper-slide .overlay ion-icon {
   opacity: 0;
 }
-
 .swiper-slide-active:hover .overlay ion-icon {
   font-size: 4rem;
   opacity: 1;
   cursor: pointer;
 }
-@media(min-width:600px){
+@media (min-width: 600px) {
   .swiper-slide {
     height: 600px;
     max-width: 500px;
   }
 }
-@media(min-width:1000px){
+@media (min-width: 1300px) {
   .swiper-slide {
-    position: relative;
-    aspect-ratio: 1/1;
-    border-radius: 10px;
+    max-width: 500px;
   }
 }
-
-@media(min-width:1300px){
+@media (min-width: 1650px) {
   .swiper-slide {
-    position: relative;
-    max-width: 485px;
-    aspect-ratio: 1/1;
-    border-radius: 10px;
- 
+    max-width: 600px;
+    height: 720px;
   }
 }

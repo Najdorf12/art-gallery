@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-3 md:mt-9 xl:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-3 md:mt-9 lg:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />
