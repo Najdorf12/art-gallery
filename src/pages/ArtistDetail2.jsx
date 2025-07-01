@@ -86,7 +86,7 @@ const ArtistDetail = ({ artistsData }) => {
                 {artist.firstname + " "}{" "}
                 <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
-              <p  className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base 2xl:text-lg">
+              <p className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base 2xl:text-lg">
                 {artist.description}
               </p>
               <Link>
@@ -106,7 +106,9 @@ const ArtistDetail = ({ artistsData }) => {
 
           <section className="w-full h-[30vh] md:w-1/2  md:h-screen flex flex-col items-end justify-end">
             <div className="w-[85%] md:w-full h-[40vh] rounded-tl-lg  flex justify-center items-end">
-              <p /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl md:leading-[4.8rem] text-end text-balance pb-8 px-3 md:px-8 xl:pb-9 2xl:text-[5.6rem] 2xl:leading-[5.7rem] ">
+              <p
+                /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl md:leading-[4.8rem] text-end text-balance pb-8 px-3 md:px-8 xl:pb-9 2xl:text-[5.6rem] 2xl:leading-[5.7rem] "
+              >
                 * {artist.quote1} *
               </p>
             </div>
@@ -120,10 +122,10 @@ const ArtistDetail = ({ artistsData }) => {
           </div>
           <div className="absolute left-0 z-5 bg-blackCustom w-[15%] h-full lg:w-[25%]"></div>
         </section>
-      
+
         {/* Images Section */}
-        <section className="w-full relative flex items-center justify-center mt-16 lg:mt-28">
-          <div className="lg:h-[100vh]">
+        <section className="w-full relative flex items-center justify-center mt-16 lg:mt-28 2xl:mt-32 ">
+          <div className="">
             <Slider
               obras={artist?.obras}
               handleSelectedImage={handleSelectedImage}
@@ -170,9 +172,9 @@ const ArtistDetail = ({ artistsData }) => {
             </section>
           )}
         </section>
-        <section className="w-[100vw] bg-blackCustom pb-12 px-5 md:py-12 md:px-12 ">
+        <section className="w-[100vw] bg-blackCustom pb-12 px-5 md:py-12 md:px-12 2xl:pb-16">
           <div className=" md:w-full rounded-tl-lg ">
-            <p className="font-title text-orangeCustom text-5xl leading-[3.1rem] md:text-7xl md:leading-[4.8rem] text-balance xl:text-7xl xl:leading-20 ">
+            <p className="font-title text-orangeCustom text-5xl leading-[3.1rem] md:text-7xl md:leading-[4.8rem] text-balance xl:text-7xl xl:leading-20 2xl:text-[5.6rem] 2xl:leading-[5.7rem]">
               * {artist.quote2} *
             </p>
           </div>
