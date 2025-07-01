@@ -63,7 +63,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="relative w-full h-[100dvh] md:h-screen bg-blackCustom dark:bg-whiteCustom lg:h-screen z-50 flex flex-col justify-center items-center overflow-hidden">
+    <main className="relative w-full h-[100dvh] md:h-screen bg-blackCustom dark:bg-whiteCustom z-50 flex flex-col justify-center items-center overflow-hidden">
       <TsParticlesBg />
       <Navbar />
       <ThemeToggle />
@@ -71,24 +71,24 @@ const Home = () => {
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
           <h1
             ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[6rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
+            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[6.3rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
           >
             GALERIA EN MOVIMIENTO
           </h1>
-          <div className="text-grayCustom font-text3 mt-2 flex justify-center items-center gap-4 text-sm  lg:text-xl 2xl:text-2xl 2xl:mt-3">
+          <div className="text-grayCustom font-text3 mt-1 flex justify-center items-center gap-4 text-sm sm:mt-2 lg:text-xl 2xl:text-2xl 2xl:mt-3">
             <span
               ref={lineRef}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
+              className="w-16 h-[1px] sm:w-20 bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
             EXPOSICIÓN COLECTIVA{" "}
             <span
               ref={lineRef2}
-              className="w-20 h-[1px] bg-orangeCustom lg:w-[400px] xl:w-[500px]"
+              className="w-16 h-[1px] sm:w-20 bg-orangeCustom lg:w-[400px] xl:w-[500px]"
             ></span>
           </div>
           <p
             ref={descriptionRef}
-            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-1 sm:px-3 max-w-[390px] mt-2 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:mt-5 2xl:text-xl dark:text-stone-400"
+            className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-1 sm:px-3 max-w-[390px] mt-1 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:mt-5 2xl:text-xl dark:text-stone-400"
           >
             Galería en Movimiento nace como el catálogo de la exposición colectiva
             “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
