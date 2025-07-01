@@ -122,7 +122,7 @@ const ArtistDetail = ({ artistsData }) => {
         </section>
       
         {/* Images Section */}
-        <section className="w-full relative flex items-center justify-center mt-12 lg:mt-28">
+        <section className="w-full relative flex items-center justify-center mt-16 lg:mt-28">
           <div className="lg:h-[100vh]">
             <Slider
               obras={artist?.obras}
@@ -170,9 +170,9 @@ const ArtistDetail = ({ artistsData }) => {
             </section>
           )}
         </section>
-        <section className="w-[80vw]  pl-5 xl:px-24 xl:pb-12 bg-blackCustom pt-12">
+        <section className="w-[100vw] bg-blackCustom pb-12 px-5 md:py-12 md:px-12 ">
           <div className=" md:w-full rounded-tl-lg ">
-            <p /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.1rem] md:text-7xl md:leading-[4.8rem] text-balance xl:text-7xl xl:leading-20 ">
+            <p className="font-title text-orangeCustom text-5xl leading-[3.1rem] md:text-7xl md:leading-[4.8rem] text-balance xl:text-7xl xl:leading-20 ">
               * {artist.quote2} *
             </p>
           </div>
