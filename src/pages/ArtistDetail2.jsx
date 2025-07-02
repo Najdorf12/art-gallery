@@ -20,6 +20,7 @@ const ArtistDetail = ({ artistsData }) => {
   const [showModal, setShowModal] = useState(false);
 
   const titleRef = useRef();
+  const descriptionRef = useRef();
   const modalRef = useRef();
   const imgRef = useRef();
   const textRef = useRef();
@@ -35,9 +36,9 @@ const ArtistDetail = ({ artistsData }) => {
   useLayoutEffect(() => {
     document.fonts.ready.then(() => {
       let split = SplitText.create(titleRef.current, {
-        type: "chars, words, lines",
+        type: "words",
         onSplit: (self) => {
-         return gsap.from(self.words, {
+          return gsap.from(self.words, {
             opacity: 0,
             duration: 2,
             ease: "sine.out",
@@ -45,6 +46,27 @@ const ArtistDetail = ({ artistsData }) => {
           });
         },
       });
+
+      const descSplit = SplitText.create(descriptionRef.current, {
+        type: "lines",
+        linesClass: "line",
+        autoSplit: true,
+        mask: "lines",
+        onSplit: (self) => {
+          return gsap.from(self.lines, {
+            duration: 2,
+            delay: .2,
+            yPercent: 100,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "expo.out",
+          });
+        },
+      });
+      return () => {
+        split.revert();
+        descSplit.revert();
+      };
     });
   }, []);
 
@@ -107,7 +129,10 @@ const ArtistDetail = ({ artistsData }) => {
                 {artist.firstname + " "}{" "}
                 <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
-              <p className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base 2xl:text-lg">
+              <p
+                ref={descriptionRef}
+                className="text-stone-400 text-sm pr-4 max-w-[660px] text-balance mt-6 md:mt-10 lg:text-base 2xl:text-lg"
+              >
                 {artist.description}
               </p>
               <Link>
@@ -127,7 +152,7 @@ const ArtistDetail = ({ artistsData }) => {
 
           <section className="w-full h-[30vh] md:w-1/2  md:h-screen flex flex-col items-end justify-end">
             <div className="w-[85%] md:w-full h-[40vh] rounded-tl-lg  flex justify-center items-end">
-              <p
+              <p  
                 /* style={{ WebkitTextStroke: "1px #ff7846"}} */ className="font-title text-orangeCustom text-5xl leading-[3.2rem] md:text-7xl md:leading-[4.8rem] text-end text-balance pb-8 px-3 md:px-8 xl:pb-9 2xl:text-[5.6rem] 2xl:leading-[5.7rem] "
               >
                 * {artist.quote1} *
