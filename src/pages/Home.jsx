@@ -5,7 +5,8 @@ import { artistsData } from "../data/artistsData";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ThemeToggle from "../components/ThemeToggle";
-import PageTransition from "./PageTransition";
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
 
 const Home = () => {
   const titleRef = useRef(null);
@@ -13,6 +14,23 @@ const Home = () => {
   const lineRef2 = useRef(null);
   const descriptionRef = useRef(null);
   const cardsRef = useRef([]); // <-- Array de referencias para las cards
+
+  useLayoutEffect(() => {
+    document.fonts.ready.then(() => {
+      let split = SplitText.create(titleRef.current, {
+        type: "chars, words",
+        autoSplit:true,
+        onSplit: (self) => {
+          gsap.from(self.words, {
+          opacity: 0,
+            duration: 2,
+            ease: "sine.out",
+            stagger: 0.1,
+          });
+        },
+      });
+    });
+  }, []);
 
   useLayoutEffect(() => {
     const timeline = gsap.timeline({
@@ -33,12 +51,12 @@ const Home = () => {
       "<"
     );
 
-    timeline.fromTo(
+    /*   timeline.fromTo(
       titleRef.current,
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, delay: 0.4 },
       "-=0.5"
-    );
+    ); */
 
     timeline.fromTo(
       descriptionRef.current,
@@ -69,11 +87,11 @@ const Home = () => {
       <ThemeToggle />
       <section className="w-full h-full relative flex flex-col items-center mt-12 lg:mt-20 2xl:mt-28">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
-          <h1
-            ref={titleRef}
-            className="font-title leading-none bg-gradient-to-t bg-clip-text text-transparent from-blackCustom via-whiteCustom to-whiteCustom text-[6.3rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem] dark:from-orangeCustom dark:via-stone-500 dark:to-grayCustom  "
-          >
-            GALERIA EN MOVIMIENTO
+          <h1 ref={titleRef} className="font-title leading-none text-stone-500 text-[6.3rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem]">
+            GALERIA EN{" "}
+            <span className="text-orangeCustom">
+              MOVIMIENTO
+            </span>
           </h1>
           <div className="text-grayCustom font-text3 mt-1 flex justify-center items-center gap-4 text-sm sm:mt-2 lg:text-xl 2xl:text-2xl 2xl:mt-3">
             <span
@@ -90,17 +108,17 @@ const Home = () => {
             ref={descriptionRef}
             className="text-sm text-grayCustom font-text2 font-medium text-center text-pretty px-1 sm:px-3 max-w-[390px] mt-1 lg:text-base  lg:px-16 xl:mt-3 md:max-w-[1500px] 2xl:max-w-[1500px] xl:text-lg 2xl:mt-5 2xl:text-xl dark:text-stone-400"
           >
-            Galería en Movimiento nace como el catálogo de la exposición colectiva
-            “Artistas Gráficos de Valpo por el Mundo”, proyecto que reúne a cuatro
-            artistas contemporáneos de Valparaíso. Este grupo de artistas
-            utiliza la gráfica y el soporte bidimensional como herramienta
-            discursiva para desarrollar una investigación estética, poética y
-            narrativa que representa su imaginario visual
+            Galería en Movimiento nace como el catálogo de la exposición
+            colectiva “Artistas Gráficos de Valpo por el Mundo”, proyecto que
+            reúne a cuatro artistas contemporáneos de Valparaíso. Este grupo de
+            artistas utiliza la gráfica y el soporte bidimensional como
+            herramienta discursiva para desarrollar una investigación estética,
+            poética y narrativa que representa su imaginario visual
             porteño-latinoamericanista.
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-3 md:mt-9 lg:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-[6%] md:mt-9 lg:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />

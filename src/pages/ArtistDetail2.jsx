@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import arrow from "/arrow-orange.png";
@@ -9,18 +10,19 @@ import { ReactLenis } from "lenis/react";
 import Slider from "../components/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 const ArtistDetail = ({ artistsData }) => {
   const { id } = useParams();
   const lenisRef = useRef();
+  const artist = artistsData.find((artist) => artist.id === id);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const titleRef = useRef();
   const modalRef = useRef();
   const imgRef = useRef();
   const textRef = useRef();
-
-  const artist = artistsData.find((artist) => artist.id === id);
-  const artistImages = artist.obras.map((obra) => obra.image);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     function update(time) {
@@ -28,6 +30,22 @@ const ArtistDetail = ({ artistsData }) => {
     }
     gsap.ticker.add(update);
     return () => gsap.ticker.remove(update);
+  }, []);
+
+  useLayoutEffect(() => {
+    document.fonts.ready.then(() => {
+      let split = SplitText.create(titleRef.current, {
+        type: "chars, words, lines",
+        onSplit: (self) => {
+          gsap.from(self.words, {
+            opacity: 0,
+            duration: 2,
+            ease: "sine.out",
+            stagger: 0.1,
+          });
+        },
+      });
+    });
   }, []);
 
   useLayoutEffect(() => {
@@ -82,7 +100,10 @@ const ArtistDetail = ({ artistsData }) => {
         <section className="relative w-full h-screen flex flex-col md:flex-row">
           <section className="w-full h-[70vh] pl-[5%] md:h-screen xl:pl-0 md:w-[55%] bg-whiteCustom  flex flex-col items-center justify-center">
             <article className="">
-              <h6 className="font-title -mt-16 text-8xl md:text-8xl lg:text-[9rem] xl:text-[12rem] xl:leading-[12rem] text-stone-300 2xl:text-[14rem] 2xl:leading-[14rem]">
+              <h6
+                ref={titleRef}
+                className="font-title -mt-16 text-8xl md:text-8xl lg:text-[9rem] xl:text-[12rem] xl:leading-[12rem] text-stone-300 2xl:text-[14rem] 2xl:leading-[14rem]"
+              >
                 {artist.firstname + " "}{" "}
                 <span className="text-orangeCustom">{artist.lastname}</span>
               </h6>
