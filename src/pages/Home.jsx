@@ -21,7 +21,7 @@ const Home = () => {
         type: "chars, words",
         autoSplit:true,
         onSplit: (self) => {
-          gsap.from(self.words, {
+        return gsap.from(self.words, {
           opacity: 0,
             duration: 2,
             ease: "sine.out",
@@ -29,6 +29,7 @@ const Home = () => {
           });
         },
       });
+     split.revert()
     });
   }, []);
 
