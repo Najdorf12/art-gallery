@@ -13,23 +13,47 @@ const Home = () => {
   const lineRef = useRef(null);
   const lineRef2 = useRef(null);
   const descriptionRef = useRef(null);
-  const cardsRef = useRef([]); // <-- Array de referencias para las cards
+  const cardsRef = useRef([]);
 
+  /*   useLayoutEffect(() => {
+    document.fonts.ready.then(() => {
+      let split = SplitText.create(titleRef.current, {
+        type: "words,lines",
+        linesClass: "line",
+        autoSplit: true,
+        mask: "lines",
+        onSplit: (self) => {
+          return gsap.from(self.words, {
+            duration: 3,
+            yPercent: 100,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "expo.out", // sine.out
+          });
+        },
+        
+      });
+    });
+  }, []); */
   useLayoutEffect(() => {
     document.fonts.ready.then(() => {
       let split = SplitText.create(titleRef.current, {
         type: "chars, words",
-        autoSplit:true,
+        mask: "chars",
         onSplit: (self) => {
-        return gsap.from(self.words, {
-          opacity: 0,
-            duration: 2,
-            ease: "sine.out",
-            stagger: 0.1,
+          return gsap.from(self.chars, {
+            duration: 3,
+            ease: "power3.out",
+            yPercent: "random([-150, 150])",
+            xPercent: "random([-150, 150])",
+            stagger: {
+              from: "random",
+              amount: 0.6,
+            },
           });
         },
       });
-     split.revert()
+      return split;
     });
   }, []);
 
@@ -38,7 +62,6 @@ const Home = () => {
       defaults: { duration: 1, ease: "power1.out" },
     });
 
-    // Animaciones iniciales
     timeline.fromTo(
       lineRef.current,
       { scaleX: 0, opacity: 0 },
@@ -66,7 +89,6 @@ const Home = () => {
       "-=0.01"
     );
 
-    // Animación de las cards una por una
     gsap.fromTo(
       cardsRef.current,
       { y: 30, opacity: 0 },
@@ -75,7 +97,7 @@ const Home = () => {
         delay: 1.2,
         opacity: 1,
         duration: 1,
-        stagger: 0.4, // <-- Retraso entre cada card
+        stagger: 0.4,
         ease: "power1.out",
       }
     );
@@ -88,11 +110,11 @@ const Home = () => {
       <ThemeToggle />
       <section className="w-full h-full relative flex flex-col items-center mt-12 lg:mt-20 2xl:mt-28">
         <article className="flex flex-col justify-center items-center relative z-50 w-full cursor-default">
-          <h1 ref={titleRef} className="font-title leading-none text-stone-500 text-[6.3rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem]">
-            GALERIA EN{" "}
-            <span className="text-orangeCustom">
-              MOVIMIENTO
-            </span>
+          <h1
+            ref={titleRef}
+            className="font-title leading-none text-stone-500 text-[6.3rem] sm:text-[6.5rem] text-center lg:text-nowrap lg:text-[12rem] xl:text-[16rem] 2xl:text-[18rem] 3xl:text-[20rem]"
+          >
+            GALERIA EN <span className="text-orangeCustom">MOVIMIENTO</span>
           </h1>
           <div className="text-grayCustom font-text3 mt-1 flex justify-center items-center gap-4 text-sm sm:mt-2 lg:text-xl 2xl:text-2xl 2xl:mt-3">
             <span
@@ -119,7 +141,7 @@ const Home = () => {
           </p>
         </article>
 
-        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-[6%] md:mt-9 lg:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
+        <section className="relative z-50 flex flex-wrap justify-center items-center gap-x-5 gap-y-3 w-full mt-4 md:mt-9 lg:mt-16 lg:gap-x-10 xl:gap-x-16 2xl:mt-20 2xl:gap-x-24">
           {artistsData?.map((artist, i) => (
             <div key={i} ref={(el) => (cardsRef.current[i] = el)} id="card">
               <CardsHome artist={artist} />

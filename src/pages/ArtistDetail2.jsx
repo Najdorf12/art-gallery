@@ -37,7 +37,7 @@ const ArtistDetail = ({ artistsData }) => {
       let split = SplitText.create(titleRef.current, {
         type: "chars, words, lines",
         onSplit: (self) => {
-          gsap.from(self.words, {
+         return gsap.from(self.words, {
             opacity: 0,
             duration: 2,
             ease: "sine.out",
