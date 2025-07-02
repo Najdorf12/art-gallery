@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import TsParticlesBg from "../components/TsParticlesBg";
 import Navbar from "../components/Navbar";
 import ThemeToggle from "../components/ThemeToggle";
 import { Link } from "react-router-dom";
 import BtnPrimary from "../components/BtnPrimary";
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
 
 const Project = () => {
   const [activeArticle, setActiveArticle] = useState("project");
@@ -14,45 +16,52 @@ const Project = () => {
   const subtitle2Ref = useRef();
   const btnRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timeline = gsap.timeline({
       defaults: { duration: 1, ease: "power1.out" },
     });
-
-    timeline
-      .fromTo(titleRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 })
-      .fromTo(subtitle2Ref.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
-      .fromTo(
-        subtitleRef.current,
-        { x: -40, opacity: 0 },
-        { x: 0, opacity: 1 },
-        "<" // Comienza al mismo tiempo que la animación anterior
-      );
-  }, []);
-
-  useEffect(() => {
     gsap.fromTo(
       btnRef.current,
       { y: 25, opacity: 0 },
       { y: 0, opacity: 1, ease: "power1.out", delay: 1.5, duration: 1 }
     );
+    timeline
+      .fromTo(subtitle2Ref.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
+      .fromTo(
+        subtitleRef.current,
+        { x: -40, opacity: 0 },
+        { x: 0, opacity: 1 },
+        "<"
+      );
   }, []);
 
-  const handleButtonClick = (newArticle) => {
-    gsap.to(containerRef.current, {
-      opacity: 0,
-      duration: 0.7,
-      onComplete: () => {
-        setActiveArticle(newArticle);
-
-        gsap.fromTo(
-          containerRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.7 }
-        );
-      },
+  useLayoutEffect(() => {
+    document.fonts.ready.then(() => {
+      let split = SplitText.create(titleRef.current, {
+        type: "chars, words",
+        mask: {
+          id: "custom-mask",
+          position: "absolute",
+          height: "100%", 
+        },
+        aria: "auto",
+        onSplit: (self) => {
+          return gsap.from(self.chars, {
+            duration: 2,
+            opacity: 0,
+            ease: "power3.out",
+            yPercent: "random([-100, 100])",
+            xPercent: "random([-100, 100])",
+            stagger: {
+              from: "random",
+              amount: 0.6,
+            },
+          });
+        },
+      });
+      return split;
     });
-  };
+  }, []);
 
   return (
     <section className="relative w-full bg-blackCustom h-[100dvh] md:h-screen z-50 flex flex-col justify-start overflow-hidden dark:bg-whiteCustom">
@@ -65,7 +74,7 @@ const Project = () => {
             <article className="flex flex-col justify-start items-start relative z-50 w-full cursor-default mt-20  2xl:mt-28">
               <h4
                 ref={titleRef}
-                className="font-title leading-[4.8rem] text-orangeCustom text-7xl max-w-[400px] lg:max-w-[600px] lg:leading-[8.1rem] lg:text-[8rem] 2xl:text-[10rem] 2xl:max-w-[800px] 2xl:leading-[10.1rem]"
+                className="font-title leading-[4.8rem]  text-orangeCustom text-7xl max-w-[400px] lg:max-w-[600px] lg:leading-[8.1rem] lg:text-[8rem] 2xl:text-[10rem] 2xl:max-w-[800px] 2xl:leading-[10.1rem]"
               >
                 Voces gráficas de{" "}
                 <span className="text-whiteCustom dark:text-grayCustom">
