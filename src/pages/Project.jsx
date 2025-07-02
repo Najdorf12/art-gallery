@@ -26,6 +26,7 @@ const Project = () => {
       { y: 0, opacity: 1, ease: "power1.out", delay: 1.5, duration: 1 }
     );
     timeline
+      .fromTo(titleRef.current, { y: 80, opacity: 0 }, { y: 0, opacity: 1 })
       .fromTo(subtitle2Ref.current, { x: 40, opacity: 0 }, { x: 0, opacity: 1 })
       .fromTo(
         subtitleRef.current,
@@ -33,34 +34,6 @@ const Project = () => {
         { x: 0, opacity: 1 },
         "<"
       );
-  }, []);
-
-  useLayoutEffect(() => {
-    document.fonts.ready.then(() => {
-      let split = SplitText.create(titleRef.current, {
-        type: "chars, words",
-        mask: {
-          id: "custom-mask",
-          position: "absolute",
-          height: "100%", 
-        },
-        aria: "auto",
-        onSplit: (self) => {
-          return gsap.from(self.chars, {
-            duration: 2,
-            opacity: 0,
-            ease: "power3.out",
-            yPercent: "random([-100, 100])",
-            xPercent: "random([-100, 100])",
-            stagger: {
-              from: "random",
-              amount: 0.6,
-            },
-          });
-        },
-      });
-      return split;
-    });
   }, []);
 
   return (

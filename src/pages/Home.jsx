@@ -40,6 +40,7 @@ const Home = () => {
       let split = SplitText.create(titleRef.current, {
         type: "chars, words",
         mask: "chars",
+        aria: "auto",
         onSplit: (self) => {
           return gsap.from(self.chars, {
             duration: 3,
